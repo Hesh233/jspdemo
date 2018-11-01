@@ -7,31 +7,29 @@ import org.apache.ibatis.annotations.Param;
 import com.ssm.domain.CartInfo;
 
 public interface CartInfoMapper {
-    int deleteByPrimaryKey(Integer id);
+	int deleteByPrimaryKey(Integer id);
 
+	int insertSelective(CartInfo record);
 
+	CartInfo selectByPrimaryKey(Integer id);
 
-    int insertSelective(CartInfo record);
+	int updateByPrimaryKeySelective(CartInfo record);
 
-    CartInfo selectByPrimaryKey(Integer id);
+	int updateByPrimaryKey(CartInfo record);
 
-    int updateByPrimaryKeySelective(CartInfo record);
+	int getnum(@Param(value = "id") int id);
 
-    int updateByPrimaryKey(CartInfo record);
-    
-    int getnum(@Param(value="id")int id);
-    
-    List<CartInfo> getcount(@Param(value="id")int id);
-    
-    int editcount(@Param(value="id")int id,@Param(value="goodsid")int goodsid,@Param(value="num")int num);
+	List<CartInfo> getcount(@Param(value = "id") int id);
 
-    int delectcart(@Param(value="id")int id,@Param(value="goodsid")int goodsid);
+	int editcount(@Param(value = "id") int id, @Param(value = "goodsid") int goodsid, @Param(value = "num") int num);
 
-	void addcart(@Param(value="id")int id, @Param(value="goodsid")int goodsid, @Param(value="num")int count);
-	
-	CartInfo searchhavecount(@Param(value="id")int id, @Param(value="goodsid")int goodsid);
+	int delectcart(@Param(value = "id") int id, @Param(value = "goodsid") int goodsid);
 
-	int insert(@Param(value="id")int id, @Param(value="goodsid")int goodsid, @Param(value="num")int count);
-	
-	List<CartInfo> getorder(@Param(value="id")int id);
+	void addcart(@Param(value = "id") int id, @Param(value = "goodsid") int goodsid, @Param(value = "num") int count);
+
+	CartInfo searchhavecount(@Param(value = "id") int id, @Param(value = "goodsid") int goodsid);
+
+	int insert(@Param(value = "id") int id, @Param(value = "goodsid") int goodsid, @Param(value = "num") int count);
+
+	List<CartInfo> getorder(@Param(value = "id") int id);
 }

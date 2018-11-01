@@ -2,21 +2,20 @@ package com.ssm.Dao;
 
 import org.apache.ibatis.annotations.Param;
 
-
 import com.ssm.domain.UserInfo;
 
 public interface UserInfoMapper {
-    int deleteByPrimaryKey(Integer id);
+	int deleteByPrimaryKey(Integer id);
 
-    int insert(UserInfo record);
+	int insert(UserInfo record);
 
-    int insertSelective(UserInfo record);
+	int insertSelective(UserInfo record);
 
-    UserInfo selectByPrimaryKey(Integer id);
-    
-    public UserInfo getUserByName(@Param(value="username")String username);
+	UserInfo selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(UserInfo record);
+	public UserInfo getUserByName(@Param(value = "username") String username);
 
-    int updateByPrimaryKey(UserInfo record);
+	int updateByPrimaryKeySelective(UserInfo record);
+
+	int updateByPrimaryKey(UserInfo record);
 }
