@@ -10,10 +10,41 @@ Target Server Type    : MYSQL
 Target Server Version : 50090
 File Encoding         : 65001
 
-Date: 2018-10-31 19:08:28
+Date: 2018-11-01 10:37:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for df_cart_cartinfo
+-- ----------------------------
+DROP TABLE IF EXISTS `df_cart_cartinfo`;
+CREATE TABLE `df_cart_cartinfo` (
+  `id` int(11) NOT NULL auto_increment,
+  `count` int(11) NOT NULL,
+  `goods_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `user_id` (`user_id`,`goods_id`),
+  KEY `df_cart_cartinfo_6753b66e` (`goods_id`),
+  KEY `df_cart_cartinfo_e8701ad4` (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of df_cart_cartinfo
+-- ----------------------------
+INSERT INTO `df_cart_cartinfo` VALUES ('1', '4', '1', '4');
+INSERT INTO `df_cart_cartinfo` VALUES ('2', '3', '3', '4');
+INSERT INTO `df_cart_cartinfo` VALUES ('3', '7', '4', '4');
+INSERT INTO `df_cart_cartinfo` VALUES ('7', '2', '18', '4');
+INSERT INTO `df_cart_cartinfo` VALUES ('6', '2', '5', '10');
+INSERT INTO `df_cart_cartinfo` VALUES ('4', '10', '21', '1');
+INSERT INTO `df_cart_cartinfo` VALUES ('70', '31', '22', '4');
+INSERT INTO `df_cart_cartinfo` VALUES ('71', '1', '41', '4');
+INSERT INTO `df_cart_cartinfo` VALUES ('5', '1', '22', '10');
+INSERT INTO `df_cart_cartinfo` VALUES ('10', '1', '24', '10');
+INSERT INTO `df_cart_cartinfo` VALUES ('73', '2', '31', '10');
+INSERT INTO `df_cart_cartinfo` VALUES ('74', '1', '32', '10');
 
 -- ----------------------------
 -- Table structure for df_goods_goodsinfo
@@ -54,7 +85,7 @@ INSERT INTO `df_goods_goodsinfo` VALUES ('13', '蜜桔', '/static/images/goods/g
 INSERT INTO `df_goods_goodsinfo` VALUES ('14', '脐橙', '/static/images/goods/goods014.jpg', '3.50', '3.50元/500g', '25', '脐橙脐橙', '100', '脐橙脐橙脐橙脐橙', '0', '1');
 INSERT INTO `df_goods_goodsinfo` VALUES ('15', '椰子', '/static/images/goods/goods015.jpg', '28.80', '28.80元/500g', '9', '椰子椰子', '100', '椰子椰子椰子椰子', '0', '1');
 INSERT INTO `df_goods_goodsinfo` VALUES ('16', '油桃', '/static/images/goods/goods016.jpg', '39.90', '39.90元/500g', '13', '油桃油桃', '100', '油桃油桃油桃油桃', '0', '1');
-INSERT INTO `df_goods_goodsinfo` VALUES ('17', '红提葡萄', '/static/images/goods/goods017.jpg', '26.80', '元/500g', '24', '红提葡萄红提葡萄', '100', '红提葡萄红提葡萄红提葡萄红提葡萄', '0', '1');
+INSERT INTO `df_goods_goodsinfo` VALUES ('17', '红提葡萄', '/static/images/goods/goods017.jpg', '26.80', '元/500g', '25', '红提葡萄红提葡萄', '100', '红提葡萄红提葡萄红提葡萄红提葡萄', '0', '1');
 INSERT INTO `df_goods_goodsinfo` VALUES ('18', '青虾', '/static/images/goods/goods018.jpg', '48.00', '48.00元/500g', '3', '青虾青虾', '100', '青虾青虾青虾青虾', '0', '2');
 INSERT INTO `df_goods_goodsinfo` VALUES ('19', '扇贝', '/static/images/goods/goods019.jpg', '46.00', '46.00元/500g', '10', '扇贝扇贝', '100', '扇贝扇贝扇贝扇贝', '0', '2');
 INSERT INTO `df_goods_goodsinfo` VALUES ('20', '秋刀鱼', '/static/images/goods/goods020.jpg', '19.00', '19.00元/500g', '3', '秋刀鱼秋刀鱼', '100', '秋刀鱼秋刀鱼秋刀鱼秋刀鱼', '0', '2');
@@ -64,7 +95,7 @@ INSERT INTO `df_goods_goodsinfo` VALUES ('23', '猪肉', '/static/images/goods/g
 INSERT INTO `df_goods_goodsinfo` VALUES ('24', '牛肉', '/static/images/goods/goods024.jpg', '24.00', '24.00元/500g', '12', '牛肉牛肉', '100', '牛肉牛肉牛肉牛肉', '0', '3');
 INSERT INTO `df_goods_goodsinfo` VALUES ('25', '羊肉', '/static/images/goods/goods025.jpg', '25.00', '25.00元/500g', '13', '羊肉羊肉', '100', '羊肉羊肉羊肉羊肉', '0', '3');
 INSERT INTO `df_goods_goodsinfo` VALUES ('26', '兔肉', '/static/images/goods/goods026.jpg', '26.00', '26.00元/500g', '24', '兔肉兔肉', '100', '兔肉兔肉兔肉兔肉', '0', '3');
-INSERT INTO `df_goods_goodsinfo` VALUES ('27', '鸡肉', '/static/images/goods/goods027.jpg', '27.00', '27.00元/500g', '21', '鸡肉鸡肉', '100', '鸡肉鸡肉鸡肉鸡肉', '0', '3');
+INSERT INTO `df_goods_goodsinfo` VALUES ('27', '鸡肉', '/static/images/goods/goods027.jpg', '27.00', '27.00元/500g', '22', '鸡肉鸡肉', '100', '鸡肉鸡肉鸡肉鸡肉', '0', '3');
 INSERT INTO `df_goods_goodsinfo` VALUES ('28', '土鸡蛋', '/static/images/goods/goods028.jpg', '28.00', '28.00元/500g', '15', '土鸡蛋土鸡蛋', '100', '土鸡蛋土鸡蛋土鸡蛋土鸡蛋', '0', '4');
 INSERT INTO `df_goods_goodsinfo` VALUES ('29', '鸭蛋', '/static/images/goods/goods029.jpg', '29.00', '29.00元/500g', '9', '鸭蛋鸭蛋', '100', '鸭蛋鸭蛋鸭蛋鸭蛋', '0', '4');
 INSERT INTO `df_goods_goodsinfo` VALUES ('30', '鹌鹑蛋', '/static/images/goods/goods030.jpg', '30.00', '30.00元/500g', '7', '鹌鹑蛋鹌鹑蛋', '100', '鹌鹑蛋鹌鹑蛋鹌鹑蛋鹌鹑蛋', '0', '4');
@@ -80,3 +111,50 @@ INSERT INTO `df_goods_goodsinfo` VALUES ('39', '圆筒雪糕', '/static/images/g
 INSERT INTO `df_goods_goodsinfo` VALUES ('40', '麦旋风', '/static/images/goods/goods040.jpg', '40.00', '40.00元/500g', '5', '麦旋风麦旋风', '100', '麦旋风麦旋风麦旋风麦旋风', '0', '6');
 INSERT INTO `df_goods_goodsinfo` VALUES ('41', '雪媚娘', '/static/images/goods/goods041.jpg', '41.00', '41.00元/500g', '15', '雪媚娘雪媚娘', '100', '雪媚娘雪媚娘雪媚娘雪媚娘', '0', '6');
 INSERT INTO `df_goods_goodsinfo` VALUES ('42', '芭菲', '/static/images/goods/goods042.jpg', '42.00', '42.00元/500g', '28', '芭菲芭菲', '100', '芭菲芭菲芭菲芭菲', '0', '6');
+
+-- ----------------------------
+-- Table structure for df_goods_typeinfo
+-- ----------------------------
+DROP TABLE IF EXISTS `df_goods_typeinfo`;
+CREATE TABLE `df_goods_typeinfo` (
+  `id` int(11) NOT NULL auto_increment,
+  `ttitle` varchar(20) NOT NULL,
+  `isDelete` tinyint(1) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of df_goods_typeinfo
+-- ----------------------------
+INSERT INTO `df_goods_typeinfo` VALUES ('1', '新鲜水果', '0');
+INSERT INTO `df_goods_typeinfo` VALUES ('2', '海鲜产品', '0');
+INSERT INTO `df_goods_typeinfo` VALUES ('3', '猪羊牛肉', '0');
+INSERT INTO `df_goods_typeinfo` VALUES ('4', '禽类蛋品', '0');
+INSERT INTO `df_goods_typeinfo` VALUES ('5', '新鲜蔬菜', '0');
+INSERT INTO `df_goods_typeinfo` VALUES ('6', '速冻食品', '0');
+
+-- ----------------------------
+-- Table structure for df_user_userinfo
+-- ----------------------------
+DROP TABLE IF EXISTS `df_user_userinfo`;
+CREATE TABLE `df_user_userinfo` (
+  `id` int(11) NOT NULL auto_increment,
+  `uname` varchar(20) NOT NULL,
+  `upwd` varchar(40) NOT NULL,
+  `uemail` varchar(30) NOT NULL,
+  `ushou` varchar(30) default '',
+  `uphone` varchar(11) default '',
+  `uaddress` varchar(100) default '',
+  `uyoubian` varchar(6) default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of df_user_userinfo
+-- ----------------------------
+INSERT INTO `df_user_userinfo` VALUES ('1', 'asdasdasd', '7c222fb2927d828af22f592134e8932480637c0d', '12589', '李开复', '12345678910', '快快减肥你会死的', '邮编');
+INSERT INTO `df_user_userinfo` VALUES ('2', 'hesh23333', '7c222fb2927d828af22f592134e8932480637c0d', '1.1@.com', '收货地址', '12345678910', '地址', '邮编');
+INSERT INTO `df_user_userinfo` VALUES ('4', 'adminadmin', '7c222fb2927d828af22f592134e8932480637c0d', '15986', '李开复', '12345678910', '阿拉山口多久爱死了大街上', '');
+INSERT INTO `df_user_userinfo` VALUES ('3', 'admin', '7c222fb2927d828af22f592134e8932480637c0d', '1.1@.com', '收货地址', '12345678910', '地址', '邮编');
+INSERT INTO `df_user_userinfo` VALUES ('10', 'admin1', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'askdjasl', null, null, null, null);
+INSERT INTO `df_user_userinfo` VALUES ('11', 'admina', 'd033e22ae348aeb5660fc2140aec35850c4da997', '123@q.c', '李开复', '12345678910', 'asdasd', 'ads');
