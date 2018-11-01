@@ -28,6 +28,12 @@
 	SELECT count(*) FROM df_cart_cartinfo WHERE user_id =
 	#{id,jdbcType=INTEGER}
 </select>
+<select id="getorder" parameterType="java.lang.Integer"
+	resultMap="BaseResultMap">
+	SELECT * FROM df_cart_cartinfo WHERE user_id =
+	#{id,jdbcType=INTEGER}
+</select>
+
 	<select id="getcount" parameterType="java.lang.Integer"
 		resultMap="BaseResultMap">
 		SELECT count FROM df_cart_cartinfo WHERE user_id = #{id,jdbcType=INTEGER}

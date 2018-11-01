@@ -28,7 +28,7 @@
 				<c:if test="${not empty uaddress}">
 					<dl>
 						<dt>当前地址：</dt>
-						<dd>${uaddress}（${uname} 收） ${uphone}</dd>
+						<dd>${uaddress}（${ushou} 收） ${uphone}</dd>
 					</dl>
 				</c:if>
 				<c:if test="${ empty uaddress}">
@@ -57,7 +57,7 @@
 							<label>手机：</label>
 							<input type="text" name="uphone">
 						</div>
-
+						<input type="hidden" name="csrf_token" value="${csrf_token}">
 						<input type="submit" name="" value="提交" class="info_submit">
 					</form>
 				</div>

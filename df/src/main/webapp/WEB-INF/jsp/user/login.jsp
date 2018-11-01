@@ -52,6 +52,7 @@ $(function(){
 							<a href="#">忘记密码</a>
 						</div>
 						<input type="submit" name="" value="登录" class="input_submit">
+						 <input type="hidden" name="csrf_token" value="${csrf_token}">
 					</form>
 				</div>
 			</div>

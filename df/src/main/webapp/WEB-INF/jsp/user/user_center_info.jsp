@@ -31,58 +31,22 @@
 				
 				<h3 class="common_title2">最近浏览</h3>
 				<div class="has_view_list">
-					<ul class="goods_type_list clearfix">
-				<li>
-					<a href="detail.html"><img src="${pageContext.request.contextPath}/static/images/goods/goods003.jpg"></a>
-					<h4><a href="detail.html">大兴大棚草莓</a></h4>
-					<div class="operate">
-						<span class="prize">￥16.80</span>
-						<span class="unit">16.80/500g</span>
-						<a href="#" class="add_goods" title="加入购物车"></a>
-					</div>
-				</li>
-
-				<li>
-					<a href="#"><img src="${pageContext.request.contextPath}/static/images/goods/goods004.jpg"></a>
-					<h4><a href="#">吐鲁番梨光杏</a></h4>
-					<div class="operate">
-						<span class="prize">￥5.50</span>
-						<span class="unit">5.50/500g</span>
-						<a href="#" class="add_goods" title="加入购物车"></a>
-					</div>
-				</li>
-
-				<li>
-					<a href="#"><img src="${pageContext.request.contextPath}/static/images/goods/goods005.jpg"></a>
-					<h4><a href="#">黄肉桃</a></h4>
-					<div class="operate">
-						<span class="prize">￥10.00</span>
-						<span class="unit">10.00/500g</span>
-						<a href="#" class="add_goods" title="加入购物车"></a>
-					</div>
-				</li>
-
-				<li>
-					<a href="#"><img src="${pageContext.request.contextPath}/static/images/goods/goods006.jpg"></a>
-					<h4><a href="#">进口西梅</a></h4>
-					<div class="operate">
-						<span class="prize">￥28.80</span>
-						<span class="unit">28.8/500g</span>
-						<a href="#" class="add_goods" title="加入购物车"></a>
-					</div>
-				</li>
-
-				<li>
-					<a href="#"><img src="${pageContext.request.contextPath}/static/images/goods/goods007.jpg"></a>
-					<h4><a href="#">香梨</a></h4>
-					<div class="operate">
-						<span class="prize">￥6.45</span>
-						<span class="unit">6.45/500g</span>
-						<a href="#" class="add_goods" title="加入购物车"></a>
-					</div>
-				</li>
-			</ul>
-		</div>
+				<ul class="goods_type_list clearfix">
+					<c:if test="${not empty viewg}">
+						<c:forEach items="${viewg}" var="item" varStatus="status">
+							<li><a href="${pageContext.request.contextPath}/goods/${item.getId()}"><img
+									src="${pageContext.request.contextPath}${item.getGpic()}"></a>
+								<h4>
+									<a href="${pageContext.request.contextPath}/goods/${item.getId()}">${item.getGtitle()}</a>
+								</h4>
+								<div class="operate">
+									<span class="prize">￥${item.getGprice()}</span> <span class="unit">${item.getGprice()}/500g</span>
+									
+								</div></li>
+						</c:forEach>
+					</c:if>
+				</ul>
+			</div>
 		</div>
 	</div>
  <%@ include file="../footer.jsp" %>

@@ -134,4 +134,9 @@ public class GoodsServiceImpl implements GoodsService{
 		gclick ++;
 		goods.updateGclick(regex1, gclick);		
 	}
+	public GoodsInfo selectbypk(int id) {
+		GoodsInfo g = goods.selectByPrimaryKey(id);
+		return g;		
+	}
+	
 }

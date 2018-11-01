@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ssm.service.CartService;
+import com.ssm.util.CsrfToken;
 import com.ssm.domain.CartInfo;
 
 
@@ -29,6 +30,9 @@ public class CartController {
 	private CartService cartService;
 	@RequestMapping("/tocart")
 	public String tocart(HttpServletResponse response,HttpSession session,HttpServletRequest request,Model model){
+		model.addAttribute("title", "购物车");
+		String csrf = CsrfToken.getCsrfToken();
+		session.setAttribute( "csrf_token",csrf);
 		if (session.getAttribute("id") == null) {
 			model.addAttribute("error_login", "2");// 未登录先登录
 			lasturl(response,"http://localhost:8080/df/cart/tocart", session);
@@ -40,7 +44,6 @@ public class CartController {
 		//System.out.println(((CartInfo) countlist.get(0)).getCount());//报错:mapper返回值内容要研究研究
 		model.addAttribute("cartcount", countlist);
 		model.addAttribute("cartlist", cartlist);
-		model.addAttribute("title", "购物车");
 		lasturl(response,"http://localhost:8080/df/cart/tocart", session);
 		return "cart/cart";
 	}
@@ -102,7 +105,10 @@ public class CartController {
 	}
 	public void lasturl(HttpServletResponse response,String url,HttpSession session)
 	{
-		session.setAttribute("lasturl", url);
+		Cookie cookie = new Cookie("lasturl",url);
+		cookie.setPath("/");
+		response.addCookie(cookie);
+		//session.setAttribute("lasturl", url);
 		System.out.println(url);
 	}
 }

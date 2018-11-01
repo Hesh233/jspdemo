@@ -136,7 +136,7 @@ format(num,dom);
 function format(count,cart_id){
 		//cart_id = $(this).parents(".cart_list_td").attr("id");
 		url = "${pageContext.request.contextPath}/cart/edit" + cart_id + "_" + count
-		$.get(url, function(data){
+		$.get(url,function(data){
 			if(data.ok == 1) {
 				alert("发生了错误");
 			}
@@ -178,7 +178,8 @@ function format(count,cart_id){
 		<li class="col01"><input type="checkbox" name="" checked=""></li>
 		<li class="col02">全选</li>
 		<li class="col03">合计(不含运费)：<span>¥</span><em id="sumtotal"></em><br>共计<b class="countGood"></b>件商品</li>
-		<li class="col04"><a href="/order/">去结算</a></li>
+		<li class="col04"><a href="${pageContext.request.contextPath}/order/toorder">去结算</a></li>
 	</ul>
+		 <%@ include file="../footer.jsp" %>
  </body>
  </html>

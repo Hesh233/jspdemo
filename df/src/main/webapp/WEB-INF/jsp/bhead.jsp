@@ -44,7 +44,7 @@ $(function(){
 					<span>|</span>
 					<a href="${pageContext.request.contextPath}/cart/tocart">我的购物车</a>
 					<span>|</span>
-					<a href="${pageContext.request.contextPath}/user/order">我的订单</a>
+					<a href="${pageContext.request.contextPath}/order/toorder">我的订单</a>
 				</div>
 			</div>
 		</div>		

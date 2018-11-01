@@ -53,5 +53,9 @@ public class CartServiceImpl implements CartService{
 		return cart.searchhavecount(id, goodsid).getCount();}
 		
 	}
+	public List getorder(int id) {
+		List<CartInfo> ca = cart.getorder(id);
+		return ca;
+	}
 	
 }

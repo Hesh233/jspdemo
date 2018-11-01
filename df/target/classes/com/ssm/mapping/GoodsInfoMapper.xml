@@ -40,7 +40,7 @@
 SELECT * FROM df_goods_goodsinfo   WHERE gtype_id =#{gtype_id,jdbcType=INTEGER} ORDER BY gclick DESC LIMIT 4
   </select>
   <select id="selectbynewgoods" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-SELECT * FROM df_goods_goodsinfo   WHERE gtype_id =1 ORDER BY id DESC LIMIT 3
+SELECT * FROM df_goods_goodsinfo   WHERE gtype_id =#{gtype_id,jdbcType=INTEGER} ORDER BY id DESC LIMIT 3
   </select>
     <select id="viewlist"  resultMap="BaseResultMap">
 SELECT * FROM df_goods_goodsinfo   WHERE gtype_id =#{gtype_id,jdbcType=INTEGER} ORDER BY ${type} ${up} LIMIT #{page,jdbcType=INTEGER},15

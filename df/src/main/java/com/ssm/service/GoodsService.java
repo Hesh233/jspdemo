@@ -24,5 +24,6 @@ public interface GoodsService {
 
 	public void addgclick(int regex1);
 	
+	public GoodsInfo selectbypk(int id);
 
 }

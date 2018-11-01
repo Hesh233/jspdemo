@@ -32,4 +32,6 @@ public interface CartInfoMapper {
 	CartInfo searchhavecount(@Param(value="id")int id, @Param(value="goodsid")int goodsid);
 
 	int insert(@Param(value="id")int id, @Param(value="goodsid")int goodsid, @Param(value="num")int count);
+	
+	List<CartInfo> getorder(@Param(value="id")int id);
 }

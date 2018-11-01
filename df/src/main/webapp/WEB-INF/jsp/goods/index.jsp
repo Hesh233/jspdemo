@@ -46,7 +46,7 @@
 				<a href="${item.getId()}">${item.getGtitle()}</a>
 				</c:forEach>
 			</div>
-			<a href="/goods/list1_1_1" class="goods_more fr" id="fruit_more">查看更多 ></a>
+			<a href="${pageContext.request.contextPath}/goods/list1_1_1" class="goods_more fr" id="fruit_more">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
@@ -73,7 +73,7 @@
 				<a href="${item.getId()}">${item.getGtitle()}</a>
 				</c:forEach>			
 			</div>
-			<a href="/goods/list2_1_1" class="goods_more fr">查看更多 ></a>
+			<a href="${pageContext.request.contextPath}/goods/list2_1_1" class="goods_more fr">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
@@ -99,7 +99,7 @@
 				<a href="${item.getId()}">${item.getGtitle()}</a>
 				</c:forEach>
 			</div>
-			<a href="/goods/list3_1_1" class="goods_more fr">查看更多 ></a>
+			<a href="${pageContext.request.contextPath}/goods/list3_1_1" class="goods_more fr">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
@@ -125,7 +125,7 @@
 				<a href="${item.getId()}">${item.getGtitle()}</a>
 </c:forEach>
 			</div>
-			<a href="/goods/list4_1_1" class="goods_more fr">查看更多 ></a>
+			<a href="${pageContext.request.contextPath}/goods/list4_1_1" class="goods_more fr">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
@@ -151,7 +151,7 @@
 				<a href="${item.getId()}">${item.getGtitle()}</a>
 </c:forEach>
 			</div>
-			<a href="/goods/list5_1_1" class="goods_more fr">查看更多 ></a>
+			<a href="${pageContext.request.contextPath}/goods/list5_1_1" class="goods_more fr">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
@@ -177,7 +177,7 @@
 				<a href="${item.getId()}">${item.getGtitle()}</a>
 </c:forEach>
 			</div>
-			<a href="/goods/list6_1_1" class="goods_more fr">查看更多 ></a>
+			<a href="${pageContext.request.contextPath}/goods/list6_1_1" class="goods_more fr">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
