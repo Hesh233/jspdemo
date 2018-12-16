@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
  
- 
+@Table(name="t_cod_school_data")
 @Entity
 public class SchoolDataEntity  implements Serializable{
 	 private static final long serialVersionUID = 1L;
