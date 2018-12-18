@@ -93,7 +93,7 @@ public void setDate(Date date) {
 @Override
 public String toString() {
 	String str = "id="+id.toString()+" date="+date.toString()+" num="+
-num.toString()+" level="+level;//+getsData().toString()
+num.toString()+" level="+level+getsData().toString();//+getsData().toString()
 	return str;
 	
 }

@@ -58,6 +58,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
+		<!-- xml导入 -->
+		<dependency>
+   <groupId>org.apache.poi</groupId>
+   <artifactId>poi-ooxml</artifactId>
+   <version>4.0.1</version>
+</dependency>
 		<!-- 获取json转换 -->
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>

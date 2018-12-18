@@ -10,9 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
  
-@Table(name="t_cod_school_data")
+ 
 @Entity
+@Table(name="t_cod_school_data")
 public class SchoolDataEntity  implements Serializable{
 	 private static final long serialVersionUID = 1L;
 	@Id
