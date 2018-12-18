@@ -25,15 +25,15 @@ public class ExcelController {
             Arrays.asList("3", "33", "333", "3333")
         );
 
-        List<List<String>> sheet2 = Arrays.asList(
-            Arrays.asList("4", "44", "444", "4444"),
-            Arrays.asList("5", "55", "555", "5555"),
-            Arrays.asList("6", "66", "666", "6666")
-        );
-        List<List<List<String>>> sheets = Arrays.asList(sheet1, sheet2);
-
+//        List<List<String>> sheet2 = Arrays.asList(
+//            Arrays.asList("4", "44", "444", "4444"),
+//            Arrays.asList("5", "55", "555", "5555"),
+//            Arrays.asList("6", "66", "666", "6666")
+//        );
+//        List<List<List<String>>> sheets = Arrays.asList(sheet1, sheet2);
+        List<List<List<String>>> sheets = Arrays.asList(sheet1);
         Map<String, Object> map = new HashMap<>();
-        map.put("ExcelSheetSetting", ExcelSheetSettingEnum.REPORT_TEST2);
+        map.put("ExcelSheetSetting", ExcelSheetSettingEnum.REPORT_TEST5);
         map.put("data", sheets);
 
         ExcelView excelView = new ExcelView();

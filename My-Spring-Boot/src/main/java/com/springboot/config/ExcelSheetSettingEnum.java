@@ -6,9 +6,23 @@ public enum ExcelSheetSettingEnum {
             {"字段名称A", "字段名称B", "字段名称C", "字段名称D"}
     }),
     REPORT_TEST2("report_test2", "Excel文件名称", new String[]{"标题1", "标题2"}),
-    REPORT_TEST3("report_test3", "Excel文件名称")
+    REPORT_TEST3("report_test3", "Excel文件名称"),
+    REPORT_TEST4("report_test", "Excel文件名称", new String[]{"Sheet名称1", "Sheet名称2"},  new String[][]{
+        {"字段名称A", "字段名称B", "字段名称C", "字段名称D"},
+        {"字段名称A", "字段名称B", "字段名称C", "字段名称D"}
+}),    
+    REPORT_TEST5("report_test", "Excel文件名称", new String[]{"Sheet名称1"},  new String[][]{
+        {"字段名称A", "字段名称B", "字段名称C", "字段名称D"}
+})
     ;
 
+	ExcelSheetSettingEnum(String code, String filename, String[] sheetnames,  String[] header) {
+        this.code = code;
+        this.filename = filename;
+        this.sheetnames = sheetnames;
+        this.header = header;
+	}
+	
     ExcelSheetSettingEnum(String code, String filename) {
         this.code = code;
         this.filename = filename;
@@ -27,6 +41,12 @@ public enum ExcelSheetSettingEnum {
         this.titles = titles;
         this.headers = headers;
     }
+    ExcelSheetSettingEnum(String code, String filename, String[] sheetnames,  String[][] headers) {
+        this.code = code;
+        this.filename = filename;
+        this.sheetnames = sheetnames;
+        this.headers = headers;
+    }
 
     /** 代码标识(必选) */
     private String code;
@@ -42,6 +62,16 @@ public enum ExcelSheetSettingEnum {
 
     /** 表头名称(可选) */
     private String[][] headers;
+
+    private String[] header;
+    
+	public String[] getHeader() {
+		return header;
+	}
+
+	public void setHeader(String[] header) {
+		this.header = header;
+	}
 
 	public String getCode() {
 		return code;
