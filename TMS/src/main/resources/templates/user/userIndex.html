@@ -1,0 +1,85 @@
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <title>学生实习与就业管理系统-主页</title>
+  <link rel="stylesheet" th:href="@{/layui/css/layui.css}"/>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">学生实习与就业管理系统</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+      <a th:text="${session.username}" href=""></a>
+      </li>
+      <li class="layui-nav-item"><a href="/TMS/user/quitlogin">退了</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+      <li class="layui-nav-item"><a href="javascript:void(0);" onclick="iframelistener('/TMS/notice/notice_data');">通知</a></li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">信息页面</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:void(0);" onclick="iframelistener('/TMS/source/source_data');">生源地信息</a></dd>
+            <dd><a href="javascript:void(0);" onclick="iframelistener('/TMS/job/job_data');">就业信息确认</a></dd>
+            <dd><a href="javascript:void(0);" onclick="iframelistener('/TMS/recruit/recruit_data');">招聘信息</a></dd>
+            <dd><a href="javascript:void(0);" onclick="iframelistener('/TMS/weekly/weekly_data');">实习指导管理</a></dd>
+          </dl>
+        </li>
+        <li th:if="${session.type == 1}" class="layui-nav-item">
+          <a href="javascript:;">配置</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:void(0);" onclick="iframelistener('/TMS/recruit/type_set');">招聘类型配置</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+        <iframe src=""  scrolling="no" id="main" name="main" frameborder="0"   style="min-height:600px;width:100%;height:100%;">
+
+  </iframe>
+  </div>
+  
+  <div class="layui-footer">
+<span>学生实习与就业管理系统-</span><span th:text="${version}"></span>
+    <!-- 底部固定区域 -->
+  </div>
+</div>
+<!-- 
+<script type="text/javascript">
+//返回提交成功失败代码
+        var index = parent.layer.getFrameIndex(window.name);
+        var success = '{sh:$success}';
+        if ( success == '1' ) {
+            parent.$("#handle_status").val('0');
+              parent.layer.close(index);
+        } else if( success == '-2' ) {
+            parent.$("#handle_status").val('2');
+            parent.layer.close(index);
+        }
+    </script>
+     -->
+<script th:src="@{/layui/layui.js}"></script>
+<script>
+//JavaScript代码区域
+layui.use('element', function(){
+  var element = layui.element;
+  
+});
+function iframelistener(obj){//从id获取url
+	obj = JSON.stringify(obj);//对象转字符
+	obj = obj.substring(1,obj.length-1);
+	document.getElementById("main").src=obj;
+	}
+</script>
+</body>
+</html>

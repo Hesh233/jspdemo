@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.HLXY.dao.NoticeMapper">
+  <resultMap id="BaseResultMap" type="com.HLXY.entity.Notice">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="teacher_id" jdbcType="INTEGER" property="teacherId" />
+     <result column="title" jdbcType="VARCHAR" property="entryeeInfo" />
+    <result column="entryee_info" jdbcType="VARCHAR" property="entryeeInfo" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, teacher_id, entryee_info, start_time, end_time,type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_notice
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="selectOne" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+    select 
+    tms_notice.id as id,
+	title as title,
+	entryee_info as entryeeInfo,
+	date_format(tms_notice.start_time, '%Y-%m-%d')  AS startTime, 
+	date_format(tms_notice.end_time, '%Y-%m-%d')  AS endTime, 
+	entryee_info as entryeeInfo,
+	tms_info.name as teacherName
+    from tms_notice
+    left join tms_info 
+  	ON 
+  	tms_info.user_num = tms_notice.teacher_id   
+    where tms_notice.id = #{id,jdbcType=INTEGER}
+  </select>
+      <select id="checkSelectId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select 
+    tms_notice.id
+    from tms_notice
+    where teacher_id =
+    (select
+    teacher_num
+    from tms_tea_stu
+    where tms_tea_stu.student_num = #{studentNum,jdbcType=INTEGER}
+    )
+  </select>
+  <select id="selectNoticeCount" resultType="java.lang.Integer">
+    select 
+	count(*) 
+	 from tms_notice
+    <if test="teacherCheck == null">
+    where end_time &gt; now() and start_time &lt; now()
+    AND (
+	(
+		type = 1
+		AND teacher_id = (
+			SELECT
+				teacher_num
+			FROM
+				tms_tea_stu
+			WHERE
+				student_num = #{studentNum}))
+			OR type = 0	
+		)
+    </if>
+  	</select>
+<select id="selectNotice" resultType="java.util.HashMap">
+    select 
+	tms_notice.id as id,
+	title as title,
+	date_format(tms_notice.start_time, '%Y-%m-%d')  AS startTime, 
+	date_format(tms_notice.end_time, '%Y-%m-%d')  AS endTime, 
+	entryee_info as entryeeInfo,
+	tms_info.name as teacherName
+    from tms_notice
+  	left join tms_info 
+  	ON 
+  	tms_info.user_num = tms_notice.teacher_id    
+    <if test="teacherCheck == null">
+    where end_time &gt; now() and start_time &lt; now()
+    AND (
+	(
+		type = 1
+		AND teacher_id = (
+			SELECT
+				teacher_num
+			FROM
+				tms_tea_stu
+			WHERE
+				student_num = #{studentNum}))
+			OR type = 0	
+		)
+    </if>
+    <if test="page != null">
+         LIMIT #{page,jdbcType=INTEGER},#{limit}      
+         </if>
+  	</select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tms_notice
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.HLXY.entity.Notice">
+    insert into tms_notice (id, teacher_id, entryee_info, 
+      start_time, end_time,type)
+    values (#{id,jdbcType=INTEGER}, #{teacherId,jdbcType=INTEGER}, #{entryeeInfo,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP},#{type,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.HLXY.entity.Notice">
+    insert into tms_notice
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+     <if test="type != null">
+        type,
+      </if>
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
+      <if test="entryeeInfo != null">
+        entryee_info,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=INTEGER},
+      </if>
+     <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="entryeeInfo != null">
+        #{entryeeInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.HLXY.entity.Notice">
+    update tms_notice
+    <set>
+      <if test="teacherId != null">
+        teacher_id = #{teacherId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="entryeeInfo != null">
+        entryee_info = #{entryeeInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.HLXY.entity.Notice">
+    update tms_notice
+    set teacher_id = #{teacherId,jdbcType=INTEGER},
+    type = #{type,jdbcType=INTEGER},
+      entryee_info = #{entryeeInfo,jdbcType=VARCHAR},
+      #{title,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

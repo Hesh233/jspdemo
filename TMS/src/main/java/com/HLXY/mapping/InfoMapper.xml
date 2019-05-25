@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.HLXY.dao.InfoMapper">
+  <resultMap id="BaseResultMap" type="com.HLXY.entity.Info">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="user_num" jdbcType="INTEGER" property="userNum" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="user_type" jdbcType="TINYINT" property="userType" />
+    <result column="student_class" jdbcType="VARCHAR" property="studentClass" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="major" jdbcType="VARCHAR" property="major" />
+    <result column="last_login" jdbcType="DATE" property="lastLogin" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, user_num, password, user_type, student_class, department, major, last_login, 
+    create_time
+  </sql>
+    <select id="getInfoByUserNum" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_info
+    where user_num = #{userNum,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tms_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.HLXY.entity.Info">
+    insert into tms_info (id, name, user_num, 
+      password, user_type, student_class, 
+      department, major, last_login, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{userNum,jdbcType=INTEGER}, 
+      #{password,jdbcType=VARCHAR}, #{userType,jdbcType=TINYINT}, #{studentClass,jdbcType=VARCHAR}, 
+      #{department,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR}, #{lastLogin,jdbcType=DATE}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.HLXY.entity.Info">
+    insert into tms_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="userNum != null">
+        user_num,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="userType != null">
+        user_type,
+      </if>
+      <if test="studentClass != null">
+        student_class,
+      </if>
+      <if test="department != null">
+        department,
+      </if>
+      <if test="major != null">
+        major,
+      </if>
+      <if test="lastLogin != null">
+        last_login,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="userNum != null">
+        #{userNum,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=TINYINT},
+      </if>
+      <if test="studentClass != null">
+        #{studentClass,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="major != null">
+        #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogin != null">
+        #{lastLogin,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.HLXY.entity.Info">
+    update tms_info
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="userNum != null">
+        user_num = #{userNum,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        user_type = #{userType,jdbcType=TINYINT},
+      </if>
+      <if test="studentClass != null">
+        student_class = #{studentClass,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="major != null">
+        major = #{major,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogin != null">
+        last_login = #{lastLogin,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.HLXY.entity.Info">
+    update tms_info
+    set name = #{name,jdbcType=VARCHAR},
+      user_num = #{userNum,jdbcType=INTEGER},
+      password = #{password,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=TINYINT},
+      student_class = #{studentClass,jdbcType=VARCHAR},
+      department = #{department,jdbcType=VARCHAR},
+      major = #{major,jdbcType=VARCHAR},
+      last_login = #{lastLogin,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

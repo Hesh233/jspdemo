@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.HLXY.dao.TeaStuMapper">
+  <resultMap id="BaseResultMap" type="com.HLXY.entity.TeaStu">
+    <result column="teacher_num" jdbcType="INTEGER" property="teacherNum" />
+    <result column="student_num" jdbcType="INTEGER" property="studentNum" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <insert id="insert" parameterType="com.HLXY.entity.TeaStu">
+    insert into tms_tea_stu (teacher_num, student_num, create_time, 
+      update_time, remarks)
+    values (#{teacherNum,jdbcType=INTEGER}, #{studentNum,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.HLXY.entity.TeaStu">
+    insert into tms_tea_stu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="teacherNum != null">
+        teacher_num,
+      </if>
+      <if test="studentNum != null">
+        student_num,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="teacherNum != null">
+        #{teacherNum,jdbcType=INTEGER},
+      </if>
+      <if test="studentNum != null">
+        #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+</mapper>

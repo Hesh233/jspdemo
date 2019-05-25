@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>jobForm</title>
+<meta charset="utf-8" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all" />
+  <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+  <script th:src="@{/layui/layui.js}"></script>
+</head>
+<body>
+<div class="layui-elem-quote">
+  <p  th:text="${name}"></p>
+</div>
+<div class="layui-form-item layui-form-text">
+    <div class="layui-input-block">
+      <textarea th:text="${dir.weekMark}" id="weekMark" name="weekMark" placeholder="请输入内容" class="layui-textarea" lay-verify="required" style="width:400px;height:500px"></textarea>
+    </div>
+  </div>
+<form class="layui-form" action=""  lay-filter="formConfig" >
+  <div class="layui-form-item">
+    <label class="layui-form-label">小结评价</label>
+    <div class="layui-input-block">
+      <textarea  th:text="${dir.teacherAppraise}" id="teacherAppraise" name="teacherAppraise" placeholder="请输入内容" class="layui-textarea" lay-verify="required|wordNum" style="width:400px;height:300px"></textarea>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">评分</label>
+    <div class="layui-input-block" style="width:80px">
+      <input th:value="${dir.score}" type="text" name="score"  placeholder="请输入" autocomplete="off" class="layui-input" lay-verify="required"/>
+    </div>
+  </div>
+
+  
+
+  <!--<div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">编辑器</label>
+    <div class="layui-input-block">
+      <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+    </div>
+  </div>-->
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" id="submit" lay-submit="" lay-filter="demo1">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+<script  th:inline="javascript">
+layui.use(
+		['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+  
+  //创建一个编辑器
+  var editIndex = layedit.build('LAY_demo_editor');  
+  //监听提交
+//   form.on('submit(demo1)', function(data){
+
+//   });
+  layui.form.on('submit(demo1)', function(data){
+// 	    layer.alert(JSON.stringify(data.field), {
+// 	        title: '最终的提交信息'
+// 	      });
+	    
+	    var id = [[${dir.id}]];
+	    data.field.id = id;
+	    var postData = JSON.stringify(data.field);
+	      layui.$.ajax({
+	          url: "/TMS/weekly/teacher_appraise_handle",
+	          type: "POST",            
+	          data:postData,
+	          contentType: 'application/json',
+	          dataType: "json",
+	          beforeSend:function()
+              { //触发ajax请求开始时执行
+	        	  layui.$("#submit").attr("disabled","true"); //改变提交按钮上的文字并将按钮设置为不可点击
+              },
+	          success: function(data){        	
+	          	if(data.code==0){
+	          		layer.msg("提交成功", {icon: 6});  
+	          		setTimeout(function(){
+	          			parent.location.reload();
+	          		},2000);	          		
+	          	}
+	          	else{
+	              layer.msg("提交失败"+data.message, {icon: 5});
+	          }
+	          }
+	      });
+	      return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+	});
+  form.verify({
+	  wordNum: function(value) {
+		  var l = value.length; 
+		  var blen = 0; 
+			/*<![CDATA[*/
+		  for(i=0; i<l; i++) { 
+		  if ((value.charCodeAt(i) & 0xff00) != 0) { 
+		  blen ++; 
+		  } 
+		  blen ++; 
+		  }
+			/*]]>*/ 
+		  if(blen >700 ){
+			  return '字数超出350';
+		  }
+	  }
+  });
+  form.on("submit(formConfig)",function(data){
+      return false;
+  }); 
+	});
+	</script>
+</body>
+</html>

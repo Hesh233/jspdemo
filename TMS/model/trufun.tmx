@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:trufun="http://trufun" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_KuXzYFkREemBPdxfnK-ncg" name="UML2 Model">
+  <eAnnotations xmi:id="_Kvt3MFkREemBPdxfnK-ncg" source="TaggedValues">
+    <details xmi:id="_Kvt3MVkREemBPdxfnK-ncg" key="ProjectType" value="UML2Project"/>
+    <details xmi:id="_WNKx8FkREemBPdxfnK-ncg" key="Diagrams" value="_K0JEMFkREemBPdxfnK-ncg,_Hbi3MFoCEemuRfmPxgZkqQ,_mUbUEFn7Eemr49rpbf2_tw,"/>
+  </eAnnotations>
+  <eAnnotations xmi:id="_K0ozcFkREemBPdxfnK-ncg" source="Diagrams">
+    <contents xmi:type="trufun:TClassDiagram" xmi:id="_K0ozcVkREemBPdxfnK-ncg" id="_K0JEMFkREemBPdxfnK-ncg" owner="_KuXzYFkREemBPdxfnK-ncg" name="main" zoom="1.0" gridSpacing="22,22">
+      <leftRuler xmi:id="_K05SIFkREemBPdxfnK-ncg" unit="2"/>
+      <topRuler xmi:id="_K05SIVkREemBPdxfnK-ncg" horizontal="true" unit="2"/>
+    </contents>
+    <contents xmi:type="trufun:TActivityDiagram" xmi:id="_mUciMFn7Eemr49rpbf2_tw" id="_mUbUEFn7Eemr49rpbf2_tw" owner="_KuXzYFkREemBPdxfnK-ncg" name="ActivityDiagram1" zoom="0.85" gridSpacing="22,22">
+      <nodes xmi:type="trufun:TActivityNode" xmi:id="_mV7v8Fn7Eemr49rpbf2_tw" owner="_mVH3oFn7Eemr49rpbf2_tw" name="教师用户活动图" location="232,16" size="1711,935" shadow="false">
+        <fillColor xmi:id="_mV7v8Vn7Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+        <lineColor xmi:id="_mV7v8ln7Eemr49rpbf2_tw"/>
+        <fontColor xmi:id="_mV7v81n7Eemr49rpbf2_tw"/>
+        <nodes xmi:type="trufun:TInitialNode" xmi:id="_w7Qv4Fn7Eemr49rpbf2_tw" owner="_w6_qIFn7Eemr49rpbf2_tw" name="用户老师" outgoingConnections="_PCNVUVn8Eemr49rpbf2_tw" location="832,0" size="20,20" shadow="false">
+          <fillColor xmi:id="_w7Qv4Vn7Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_w7Qv4ln7Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_w7Qv41n7Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_xv9jQFn7Eemr49rpbf2_tw" owner="_xv88MFn7Eemr49rpbf2_tw" name="登录验证" incomingConnections="_FIF1kFn8Eemr49rpbf2_tw _PCNVUVn8Eemr49rpbf2_tw" outgoingConnections="_K4iKMVn8Eemr49rpbf2_tw" location="805,57" size="80,26" shadow="false">
+          <fillColor xmi:id="_xv9jQVn7Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_xv9jQln7Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_xv9jQ1n7Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_xv9jRFn7Eemr49rpbf2_tw" id="_xv88MFn7Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TDecisionNode" xmi:id="_zSmasFn7Eemr49rpbf2_tw" owner="_zSlzoFn7Eemr49rpbf2_tw" name="" incomingConnections="_K4iKMVn8Eemr49rpbf2_tw" outgoingConnections="_9QXrYFn7Eemr49rpbf2_tw _FIF1kFn8Eemr49rpbf2_tw" location="818,138" size="51,30" shadow="false">
+          <fillColor xmi:id="_zSmasVn7Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_zSmasln7Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_zSmas1n7Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_10dTcFn7Eemr49rpbf2_tw" owner="_10csYFn7Eemr49rpbf2_tw" name="进入主界面" incomingConnections="_9QXrYFn7Eemr49rpbf2_tw" outgoingConnections="_OGWUkVn9Eemr49rpbf2_tw _X3LgAFn-Eemr49rpbf2_tw _ZMtvkVn-Eemr49rpbf2_tw _ZjoawFn-Eemr49rpbf2_tw _abTpoVn-Eemr49rpbf2_tw" location="814,206" size="80,26" shadow="false">
+          <fillColor xmi:id="_10dTcVn7Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_10dTcln7Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_10dTc1n7Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_10dTdFn7Eemr49rpbf2_tw" id="_10csYFn7Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_-UXpkVn8Eemr49rpbf2_tw" owner="_-UXpkFn8Eemr49rpbf2_tw" name="发布招聘信息" incomingConnections="_O4pUMVn9Eemr49rpbf2_tw" outgoingConnections="_eT3PkVn-Eemr49rpbf2_tw" location="128,400" size="92,26" shadow="false">
+          <fillColor xmi:id="_-UXpkln8Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_-UXpk1n8Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_-UXplFn8Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_-UXplVn8Eemr49rpbf2_tw" id="_-UXpkFn8Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_BtwAMVn9Eemr49rpbf2_tw" owner="_BtwAMFn9Eemr49rpbf2_tw" name="修改招聘信息" incomingConnections="_PioFUFn9Eemr49rpbf2_tw" outgoingConnections="_e2HBAVn-Eemr49rpbf2_tw" location="234,405" size="92,26" shadow="false">
+          <fillColor xmi:id="_BtwAMln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_BtwAM1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_BtwANFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_BtwANVn9Eemr49rpbf2_tw" id="_BtwAMFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_FpVsAVn9Eemr49rpbf2_tw" owner="_FpVsAFn9Eemr49rpbf2_tw" name="查看招聘信息" incomingConnections="_OkRmsVn9Eemr49rpbf2_tw" outgoingConnections="_d76CkVn-Eemr49rpbf2_tw" location="18,402" size="92,26" shadow="false">
+          <fillColor xmi:id="_FpWTEFn9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_FpWTEVn9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_FpWTEln9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_FpWTE1n9Eemr49rpbf2_tw" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_MnV_8Fn9Eemr49rpbf2_tw" owner="_MnVY4Fn9Eemr49rpbf2_tw" name="进入招聘界面" incomingConnections="_OGWUkVn9Eemr49rpbf2_tw" outgoingConnections="_OkRmsVn9Eemr49rpbf2_tw _O4pUMVn9Eemr49rpbf2_tw _PioFUFn9Eemr49rpbf2_tw" location="111,324" size="92,26" shadow="false">
+          <fillColor xmi:id="_MnV_8Vn9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_MnV_8ln9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_MnV_81n9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_MnV_9Fn9Eemr49rpbf2_tw" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Q4EOQVn9Eemr49rpbf2_tw" owner="_Q4EOQFn9Eemr49rpbf2_tw" name="查看通知" incomingConnections="_Q4KU4ln9Eemr49rpbf2_tw" outgoingConnections="_fQJRoFn-Eemr49rpbf2_tw" location="341,430" size="92,26" shadow="false">
+          <fillColor xmi:id="_Q4EOQln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Q4EOQ1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_Q4EORFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_Q4EORVn9Eemr49rpbf2_tw" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Q4GDcVn9Eemr49rpbf2_tw" owner="_Q4GDcFn9Eemr49rpbf2_tw" name="进入通知界面" incomingConnections="_X3LgAFn-Eemr49rpbf2_tw" outgoingConnections="_Q4KU4ln9Eemr49rpbf2_tw _Q4K78Fn9Eemr49rpbf2_tw _Q4K79Vn9Eemr49rpbf2_tw" location="441,334" size="92,26" shadow="false">
+          <fillColor xmi:id="_Q4GDcln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Q4GDc1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_Q4GDdFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_Q4GDdVn9Eemr49rpbf2_tw" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Q4HRkVn9Eemr49rpbf2_tw" owner="_Q4HRkFn9Eemr49rpbf2_tw" name="发布通知" incomingConnections="_Q4K78Fn9Eemr49rpbf2_tw" outgoingConnections="_fmNoQVn-Eemr49rpbf2_tw" location="451,420" size="92,26" shadow="false">
+          <fillColor xmi:id="_Q4HRkln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Q4HRk1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_Q4HRlFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_Q4HRlVn9Eemr49rpbf2_tw" id="_-UXpkFn8Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Q4IfsVn9Eemr49rpbf2_tw" owner="_Q4IfsFn9Eemr49rpbf2_tw" name="修改招通知" incomingConnections="_Q4K79Vn9Eemr49rpbf2_tw" outgoingConnections="_gA1HsVn-Eemr49rpbf2_tw" location="559,427" size="92,26" shadow="false">
+          <fillColor xmi:id="_Q4Ifsln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Q4Ifs1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_Q4IftFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_Q4IftVn9Eemr49rpbf2_tw" id="_BtwAMFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_YHd0MFn9Eemr49rpbf2_tw" owner="_YHdNIFn9Eemr49rpbf2_tw" name="查看周记" incomingConnections="_YHjTwFn9Eemr49rpbf2_tw" outgoingConnections="_gemo0Vn-Eemr49rpbf2_tw" location="664,421" size="92,26" shadow="false">
+          <fillColor xmi:id="_YHd0MVn9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_YHd0Mln9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_YHd0M1n9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_YHd0NFn9Eemr49rpbf2_tw" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_YHfCUVn9Eemr49rpbf2_tw" owner="_YHfCUFn9Eemr49rpbf2_tw" name="进入周记界面" incomingConnections="_ZMtvkVn-Eemr49rpbf2_tw" outgoingConnections="_YHjTwFn9Eemr49rpbf2_tw _YHjTxVn9Eemr49rpbf2_tw _YHjTyln9Eemr49rpbf2_tw" location="761,340" size="92,26" shadow="false">
+          <fillColor xmi:id="_YHfCUln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_YHfCU1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_YHfCVFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_YHfCVVn9Eemr49rpbf2_tw" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_YHgQcVn9Eemr49rpbf2_tw" owner="_YHgQcFn9Eemr49rpbf2_tw" name="周记打分评论" incomingConnections="_YHjTxVn9Eemr49rpbf2_tw" outgoingConnections="_g9p8UVn-Eemr49rpbf2_tw" location="778,416" size="92,26" shadow="false">
+          <fillColor xmi:id="_YHgQcln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_YHgQc1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_YHgQdFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_YHgQdVn9Eemr49rpbf2_tw" id="_-UXpkFn8Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_YHhekVn9Eemr49rpbf2_tw" owner="_YHhekFn9Eemr49rpbf2_tw" name="提交周指导记录" incomingConnections="_YHjTyln9Eemr49rpbf2_tw" outgoingConnections="_hSoGwFn-Eemr49rpbf2_tw" location="884,421" size="104,26" shadow="false">
+          <fillColor xmi:id="_YHhekln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_YHhek1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_YHhelFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_YHhelVn9Eemr49rpbf2_tw" id="_BtwAMFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_qrg-MVn9Eemr49rpbf2_tw" owner="_qrg-MFn9Eemr49rpbf2_tw" name="查看生源地信息" incomingConnections="_vM_v4Fn-Eemr49rpbf2_tw" outgoingConnections="_hrkyQVn-Eemr49rpbf2_tw" location="1032,452" size="104,26" shadow="false">
+          <fillColor xmi:id="_qrg-Mln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_qrg-M1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_qrg-NFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_qrg-NVn9Eemr49rpbf2_tw" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_qrizYVn9Eemr49rpbf2_tw" owner="_qrizYFn9Eemr49rpbf2_tw" name="进入生源地界面" incomingConnections="_ZjoawFn-Eemr49rpbf2_tw" outgoingConnections="_qrnE0Fn9Eemr49rpbf2_tw _qrnE1Vn9Eemr49rpbf2_tw _IIxGYFn-Eemr49rpbf2_tw _vM_v4Fn-Eemr49rpbf2_tw" location="1138,384" size="104,26" shadow="false">
+          <fillColor xmi:id="_qrizYln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_qrizY1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_qrizZFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_qrizZVn9Eemr49rpbf2_tw" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_qrkBgVn9Eemr49rpbf2_tw" owner="_qrkBgFn9Eemr49rpbf2_tw" name="发布待确认生源地信息" incomingConnections="_qrnE0Fn9Eemr49rpbf2_tw" outgoingConnections="_iHqRUVn-Eemr49rpbf2_tw" location="1142,456" size="140,26" shadow="false">
+          <fillColor xmi:id="_qrkBgln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_qrkBg1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_qrkBhFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_qrkBhVn9Eemr49rpbf2_tw" id="_-UXpkFn8Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_qrlPoVn9Eemr49rpbf2_tw" owner="_qrlPoFn9Eemr49rpbf2_tw" name="添加生源地信息" incomingConnections="_qrnE1Vn9Eemr49rpbf2_tw" outgoingConnections="_ihGFAVn-Eemr49rpbf2_tw" location="1268,428" size="104,26" shadow="false">
+          <fillColor xmi:id="_qrlPoln9Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_qrlPo1n9Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_qrlPpFn9Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_qrlPpVn9Eemr49rpbf2_tw" id="_BtwAMFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Lo4-MVn-Eemr49rpbf2_tw" owner="_Lo4-MFn-Eemr49rpbf2_tw" name="查看就业信息" incomingConnections="_Lo-dwln-Eemr49rpbf2_tw" outgoingConnections="_i8XEsVn-Eemr49rpbf2_tw" location="1393,407" size="92,26" shadow="false">
+          <fillColor xmi:id="_Lo4-Mln-Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Lo4-M1n-Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_Lo4-NFn-Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_Lo4-NVn-Eemr49rpbf2_tw" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Lo6MUVn-Eemr49rpbf2_tw" owner="_Lo6MUFn-Eemr49rpbf2_tw" name="进入就业信息界面" incomingConnections="_abTpoVn-Eemr49rpbf2_tw" outgoingConnections="_Lo-dwln-Eemr49rpbf2_tw _Lo_E0Vn-Eemr49rpbf2_tw _Lo_E1ln-Eemr49rpbf2_tw" location="1502,361" size="116,26" shadow="false">
+          <fillColor xmi:id="_Lo6MUln-Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Lo6MU1n-Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_Lo6MVFn-Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_Lo6MVVn-Eemr49rpbf2_tw" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Lo8BgVn-Eemr49rpbf2_tw" owner="_Lo8BgFn-Eemr49rpbf2_tw" name="修改就业信息" incomingConnections="_Lo_E0Vn-Eemr49rpbf2_tw" outgoingConnections="_jVmEEVn-Eemr49rpbf2_tw" location="1504,405" size="92,26" shadow="false">
+          <fillColor xmi:id="_Lo8Bgln-Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Lo8Bg1n-Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_Lo8BhFn-Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_Lo8BhVn-Eemr49rpbf2_tw" id="_-UXpkFn8Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Lo9PoVn-Eemr49rpbf2_tw" owner="_Lo9PoFn-Eemr49rpbf2_tw" name="核对招聘信息" incomingConnections="_Lo_E1ln-Eemr49rpbf2_tw" outgoingConnections="_j4TvkVn-Eemr49rpbf2_tw" location="1615,405" size="92,26" shadow="false">
+          <fillColor xmi:id="_Lo9Poln-Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Lo9Po1n-Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_Lo9PpFn-Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_Lo9PpVn-Eemr49rpbf2_tw" id="_BtwAMFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_GajREVn-Eemr49rpbf2_tw" owner="_GajREFn-Eemr49rpbf2_tw" name="修改生源地信息" incomingConnections="_IIxGYFn-Eemr49rpbf2_tw" outgoingConnections="_4cSJ8Vn-Eemr49rpbf2_tw" location="920,455" size="104,26" shadow="false">
+          <fillColor xmi:id="_GajREln-Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_GajRE1n-Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_GajRFFn-Eemr49rpbf2_tw"/>
+          <stereotypeNodes xmi:id="_GajRFVn-Eemr49rpbf2_tw" id="_GajREFn-Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActivityFinalNode" xmi:id="_bbHg0Fn-Eemr49rpbf2_tw" owner="_bbG5wFn-Eemr49rpbf2_tw" name="ActivityFinalNode1" incomingConnections="_d76CkVn-Eemr49rpbf2_tw _eT3PkVn-Eemr49rpbf2_tw _e2HBAVn-Eemr49rpbf2_tw _fQJRoFn-Eemr49rpbf2_tw _fmNoQVn-Eemr49rpbf2_tw _gA1HsVn-Eemr49rpbf2_tw _gemo0Vn-Eemr49rpbf2_tw _g9p8UVn-Eemr49rpbf2_tw _hSoGwFn-Eemr49rpbf2_tw _hrkyQVn-Eemr49rpbf2_tw _iHqRUVn-Eemr49rpbf2_tw _ihGFAVn-Eemr49rpbf2_tw _i8XEsVn-Eemr49rpbf2_tw _jVmEEVn-Eemr49rpbf2_tw _j4TvkVn-Eemr49rpbf2_tw _4cSJ8Vn-Eemr49rpbf2_tw" location="823,602" size="24,24" shadow="false">
+          <fillColor xmi:id="_bbHg0Vn-Eemr49rpbf2_tw" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_bbHg0ln-Eemr49rpbf2_tw"/>
+          <fontColor xmi:id="_bbHg01n-Eemr49rpbf2_tw"/>
+        </nodes>
+      </nodes>
+      <nodes xmi:type="trufun:SubLabel" xmi:id="_H9c5IFn8Eemr49rpbf2_tw" name="失败" location="899,200" size="28,16" parent="_FIF1kFn8Eemr49rpbf2_tw" alias="Name" direction="13" offset="0,0">
+        <fontColor xmi:id="_H9c5IVn8Eemr49rpbf2_tw"/>
+      </nodes>
+      <nodes xmi:type="trufun:SubLabel" xmi:id="_I010IFn8Eemr49rpbf2_tw" name="成功" location="1076,227" size="28,16" parent="_9QXrYFn7Eemr49rpbf2_tw" alias="Name" direction="13" offset="0,0">
+        <fontColor xmi:id="_I010IVn8Eemr49rpbf2_tw"/>
+      </nodes>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_9QXrYFn7Eemr49rpbf2_tw" owner="_9QXEUFn7Eemr49rpbf2_tw" name="成功" subLabels="_I010IFn8Eemr49rpbf2_tw" target="_10dTcFn7Eemr49rpbf2_tw" source="_zSmasFn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_9QXrYVn7Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_9QXrYln7Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TObjectFlowConnection" xmi:id="_FIF1kFn8Eemr49rpbf2_tw" owner="_FIFOgFn8Eemr49rpbf2_tw" name="失败" subLabels="_H9c5IFn8Eemr49rpbf2_tw" target="_xv9jQFn7Eemr49rpbf2_tw" source="_zSmasFn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_FIF1kVn8Eemr49rpbf2_tw"/>
+        <points>777,198</points>
+        <points>777,125</points>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_K4iKMVn8Eemr49rpbf2_tw" owner="_K4iKMFn8Eemr49rpbf2_tw" name="" target="_zSmasFn7Eemr49rpbf2_tw" source="_xv9jQFn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_K4iKMln8Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_K4iKM1n8Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_PCNVUVn8Eemr49rpbf2_tw" owner="_PCNVUFn8Eemr49rpbf2_tw" name="" target="_xv9jQFn7Eemr49rpbf2_tw" source="_w7Qv4Fn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_PCNVUln8Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_PCNVU1n8Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_OGWUkVn9Eemr49rpbf2_tw" owner="_OGWUkFn9Eemr49rpbf2_tw" name="" target="_MnV_8Fn9Eemr49rpbf2_tw" source="_10dTcFn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_OGWUkln9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_OGWUk1n9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_OkRmsVn9Eemr49rpbf2_tw" owner="_OkRmsFn9Eemr49rpbf2_tw" name="" target="_FpVsAVn9Eemr49rpbf2_tw" source="_MnV_8Fn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_OkRmsln9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_OkRms1n9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_O4pUMVn9Eemr49rpbf2_tw" owner="_O4pUMFn9Eemr49rpbf2_tw" name="" target="_-UXpkVn8Eemr49rpbf2_tw" source="_MnV_8Fn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_O4pUMln9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_O4pUM1n9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_PioFUFn9Eemr49rpbf2_tw" owner="_PineQFn9Eemr49rpbf2_tw" name="" target="_BtwAMVn9Eemr49rpbf2_tw" source="_MnV_8Fn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_PioFUVn9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_PioFUln9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Q4KU4ln9Eemr49rpbf2_tw" owner="_Q4KU4Vn9Eemr49rpbf2_tw" name="" target="_Q4EOQVn9Eemr49rpbf2_tw" source="_Q4GDcVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_Q4KU41n9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_Q4KU5Fn9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Q4K78Fn9Eemr49rpbf2_tw" owner="_Q4KU5ln9Eemr49rpbf2_tw" name="" target="_Q4HRkVn9Eemr49rpbf2_tw" source="_Q4GDcVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_Q4K78Vn9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_Q4K78ln9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Q4K79Vn9Eemr49rpbf2_tw" owner="_Q4K79Fn9Eemr49rpbf2_tw" name="" target="_Q4IfsVn9Eemr49rpbf2_tw" source="_Q4GDcVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_Q4K79ln9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_Q4K791n9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_YHjTwFn9Eemr49rpbf2_tw" owner="_YHissVn9Eemr49rpbf2_tw" name="" target="_YHd0MFn9Eemr49rpbf2_tw" source="_YHfCUVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_YHjTwVn9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_YHjTwln9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_YHjTxVn9Eemr49rpbf2_tw" owner="_YHjTxFn9Eemr49rpbf2_tw" name="" target="_YHgQcVn9Eemr49rpbf2_tw" source="_YHfCUVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_YHjTxln9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_YHjTx1n9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_YHjTyln9Eemr49rpbf2_tw" owner="_YHjTyVn9Eemr49rpbf2_tw" name="" target="_YHhekVn9Eemr49rpbf2_tw" source="_YHfCUVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_YHjTy1n9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_YHjTzFn9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_qrnE0Fn9Eemr49rpbf2_tw" owner="_qrmdxln9Eemr49rpbf2_tw" name="" target="_qrkBgVn9Eemr49rpbf2_tw" source="_qrizYVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_qrnE0Vn9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_qrnE0ln9Eemr49rpbf2_tw" b="255"/>
+        <points>1425,504</points>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_qrnE1Vn9Eemr49rpbf2_tw" owner="_qrnE1Fn9Eemr49rpbf2_tw" name="" target="_qrlPoVn9Eemr49rpbf2_tw" source="_qrizYVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_qrnE1ln9Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_qrnE11n9Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Lo-dwln-Eemr49rpbf2_tw" owner="_Lo-dwVn-Eemr49rpbf2_tw" name="" target="_Lo4-MVn-Eemr49rpbf2_tw" source="_Lo6MUVn-Eemr49rpbf2_tw">
+        <fillColor xmi:id="_Lo-dw1n-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_Lo-dxFn-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Lo_E0Vn-Eemr49rpbf2_tw" owner="_Lo_E0Fn-Eemr49rpbf2_tw" name="" target="_Lo8BgVn-Eemr49rpbf2_tw" source="_Lo6MUVn-Eemr49rpbf2_tw">
+        <fillColor xmi:id="_Lo_E0ln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_Lo_E01n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Lo_E1ln-Eemr49rpbf2_tw" owner="_Lo_E1Vn-Eemr49rpbf2_tw" name="" target="_Lo9PoVn-Eemr49rpbf2_tw" source="_Lo6MUVn-Eemr49rpbf2_tw">
+        <fillColor xmi:id="_Lo_E11n-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_Lo_E2Fn-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_IIxGYFn-Eemr49rpbf2_tw" owner="_IIwfUFn-Eemr49rpbf2_tw" name="" target="_GajREVn-Eemr49rpbf2_tw" source="_qrizYVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_IIxGYVn-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_IIxGYln-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_X3LgAFn-Eemr49rpbf2_tw" owner="_X3K48Fn-Eemr49rpbf2_tw" name="" target="_Q4GDcVn9Eemr49rpbf2_tw" source="_10dTcFn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_X3LgAVn-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_X3LgAln-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_ZMtvkVn-Eemr49rpbf2_tw" owner="_ZMtvkFn-Eemr49rpbf2_tw" name="" target="_YHfCUVn9Eemr49rpbf2_tw" source="_10dTcFn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_ZMtvkln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_ZMtvk1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_ZjoawFn-Eemr49rpbf2_tw" owner="_ZjnzsFn-Eemr49rpbf2_tw" name="" target="_qrizYVn9Eemr49rpbf2_tw" source="_10dTcFn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_ZjoawVn-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_Zjoawln-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_abTpoVn-Eemr49rpbf2_tw" owner="_abTpoFn-Eemr49rpbf2_tw" name="" target="_Lo6MUVn-Eemr49rpbf2_tw" source="_10dTcFn7Eemr49rpbf2_tw">
+        <fillColor xmi:id="_abTpoln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_abTpo1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_d76CkVn-Eemr49rpbf2_tw" owner="_d76CkFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_FpVsAVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_d76Ckln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_d76Ck1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_eT3PkVn-Eemr49rpbf2_tw" owner="_eT3PkFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_-UXpkVn8Eemr49rpbf2_tw">
+        <fillColor xmi:id="_eT3Pkln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_eT3Pk1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_e2HBAVn-Eemr49rpbf2_tw" owner="_e2HBAFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_BtwAMVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_e2HBAln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_e2HBA1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_fQJRoFn-Eemr49rpbf2_tw" owner="_fQIqkFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_Q4EOQVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_fQJRoVn-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_fQJRoln-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_fmNoQVn-Eemr49rpbf2_tw" owner="_fmNoQFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_Q4HRkVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_fmOPUFn-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_fmOPUVn-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gA1HsVn-Eemr49rpbf2_tw" owner="_gA1HsFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_Q4IfsVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_gA1Hsln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_gA1Hs1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gemo0Vn-Eemr49rpbf2_tw" owner="_gemo0Fn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_YHd0MFn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_gemo0ln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_gemo01n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_g9p8UVn-Eemr49rpbf2_tw" owner="_g9p8UFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_YHgQcVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_g9p8Uln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_g9p8U1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_hSoGwFn-Eemr49rpbf2_tw" owner="_hSnfsFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_YHhekVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_hSoGwVn-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_hSoGwln-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_hrkyQVn-Eemr49rpbf2_tw" owner="_hrkyQFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_qrg-MVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_hrkyQln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_hrkyQ1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_iHqRUVn-Eemr49rpbf2_tw" owner="_iHqRUFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_qrkBgVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_iHqRUln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_iHqRU1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_ihGFAVn-Eemr49rpbf2_tw" owner="_ihGFAFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_qrlPoVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_ihGFAln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_ihGFA1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_i8XEsVn-Eemr49rpbf2_tw" owner="_i8XEsFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_Lo4-MVn-Eemr49rpbf2_tw">
+        <fillColor xmi:id="_i8XEsln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_i8XEs1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_jVmEEVn-Eemr49rpbf2_tw" owner="_jVmEEFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_Lo8BgVn-Eemr49rpbf2_tw">
+        <fillColor xmi:id="_jVmEEln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_jVmEE1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_j4TvkVn-Eemr49rpbf2_tw" owner="_j4TvkFn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_Lo9PoVn-Eemr49rpbf2_tw">
+        <fillColor xmi:id="_j4Tvkln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_j4Tvk1n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_vM_v4Fn-Eemr49rpbf2_tw" owner="_vM_I0Fn-Eemr49rpbf2_tw" name="" target="_qrg-MVn9Eemr49rpbf2_tw" source="_qrizYVn9Eemr49rpbf2_tw">
+        <fillColor xmi:id="_vM_v4Vn-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_vM_v4ln-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_4cSJ8Vn-Eemr49rpbf2_tw" owner="_4cSJ8Fn-Eemr49rpbf2_tw" name="" target="_bbHg0Fn-Eemr49rpbf2_tw" source="_GajREVn-Eemr49rpbf2_tw">
+        <fillColor xmi:id="_4cSJ8ln-Eemr49rpbf2_tw"/>
+        <lineColor xmi:id="_4cSJ81n-Eemr49rpbf2_tw" b="255"/>
+      </connections>
+      <leftRuler xmi:id="_mUciMVn7Eemr49rpbf2_tw" unit="2"/>
+      <topRuler xmi:id="_mUciMln7Eemr49rpbf2_tw" horizontal="true" unit="2"/>
+    </contents>
+    <contents xmi:type="trufun:TActivityDiagram" xmi:id="_HbjeQFoCEemuRfmPxgZkqQ" id="_Hbi3MFoCEemuRfmPxgZkqQ" owner="_KuXzYFkREemBPdxfnK-ncg" name="ActivityDiagram4" zoom="0.65" gridSpacing="22,22">
+      <nodes xmi:type="trufun:TActivityNode" xmi:id="_HbkFUFoCEemuRfmPxgZkqQ" owner="_HbjeQ1oCEemuRfmPxgZkqQ" name="学生用户活动图" location="214,57" size="1721,780" shadow="false">
+        <fillColor xmi:id="_HbkFUVoCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+        <lineColor xmi:id="_HbkFUloCEemuRfmPxgZkqQ"/>
+        <fontColor xmi:id="_HbkFU1oCEemuRfmPxgZkqQ"/>
+        <nodes xmi:type="trufun:TInitialNode" xmi:id="_Xt3PIVoCEemuRfmPxgZkqQ" owner="_Xt3PIFoCEemuRfmPxgZkqQ" name="用户老师" outgoingConnections="_Xt6ScFoCEemuRfmPxgZkqQ" location="856,0" size="20,20" shadow="false">
+          <fillColor xmi:id="_Xt3PIloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Xt3PI1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_Xt3PJFoCEemuRfmPxgZkqQ"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Xt32MVoCEemuRfmPxgZkqQ" owner="_Xt32MFoCEemuRfmPxgZkqQ" name="登录验证" incomingConnections="_Xt6ScFoCEemuRfmPxgZkqQ _Xt6SeloCEemuRfmPxgZkqQ" outgoingConnections="_Xt6SdVoCEemuRfmPxgZkqQ" location="829,54" size="80,26" shadow="false">
+          <fillColor xmi:id="_Xt32MloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Xt32M1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_Xt32NFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_Xt32NVoCEemuRfmPxgZkqQ" id="_xv88MFn7Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TDecisionNode" xmi:id="_Xt4dQVoCEemuRfmPxgZkqQ" owner="_Xt4dQFoCEemuRfmPxgZkqQ" name="" incomingConnections="_Xt6SdVoCEemuRfmPxgZkqQ" outgoingConnections="_Xt6SeloCEemuRfmPxgZkqQ _Xt65gFoCEemuRfmPxgZkqQ" location="842,135" size="51,30" shadow="false">
+          <fillColor xmi:id="_Xt4dQloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Xt4dQ1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_Xt4dRFoCEemuRfmPxgZkqQ"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_Xt5EUVoCEemuRfmPxgZkqQ" owner="_Xt5EUFoCEemuRfmPxgZkqQ" name="进入主界面" incomingConnections="_Xt65gFoCEemuRfmPxgZkqQ" outgoingConnections="_hmYzcVoCEemuRfmPxgZkqQ _h7KwoFoCEemuRfmPxgZkqQ _iQI7EVoCEemuRfmPxgZkqQ _kcuucFoCEemuRfmPxgZkqQ _k4QM0VoCEemuRfmPxgZkqQ" location="838,203" size="80,26" shadow="false">
+          <fillColor xmi:id="_Xt5EUloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_Xt5EU1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_Xt5EVFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_Xt5EVVoCEemuRfmPxgZkqQ" id="_10csYFn7Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpQc0VoCEemuRfmPxgZkqQ" owner="_gpQc0FoCEemuRfmPxgZkqQ" name="查看周记" incomingConnections="_gpnCJ1oCEemuRfmPxgZkqQ" outgoingConnections="_1qCH8VoCEemuRfmPxgZkqQ" location="680,462" size="92,26" shadow="false">
+          <fillColor xmi:id="_gpQc0loCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpQc01oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpQc1FoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpQc1VoCEemuRfmPxgZkqQ" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpRD4VoCEemuRfmPxgZkqQ" owner="_gpRD4FoCEemuRfmPxgZkqQ" name="查看通知" incomingConnections="_gpnpMFoCEemuRfmPxgZkqQ" outgoingConnections="_2IlsMVoCEemuRfmPxgZkqQ" location="503,458" size="92,26" shadow="false">
+          <fillColor xmi:id="_gpRD4loCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpRD41oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpRD5FoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpRD5VoCEemuRfmPxgZkqQ" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpS5EVoCEemuRfmPxgZkqQ" owner="_gpS5EFoCEemuRfmPxgZkqQ" name="确认生源地信息" incomingConnections="_gpnpOloCEemuRfmPxgZkqQ" outgoingConnections="_0TRJUVoCEemuRfmPxgZkqQ" location="1152,466" size="140,26" shadow="false">
+          <fillColor xmi:id="_gpS5EloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpS5E1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpS5FFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpS5FVoCEemuRfmPxgZkqQ" id="_-UXpkFn8Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpUuQVoCEemuRfmPxgZkqQ" owner="_gpUuQFoCEemuRfmPxgZkqQ" name="查看就业信息" incomingConnections="_gpnpP1oCEemuRfmPxgZkqQ" outgoingConnections="_3HVzcFoCEemuRfmPxgZkqQ" location="1441,474" size="92,26" shadow="false">
+          <fillColor xmi:id="_gpUuQloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpUuQ1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpUuRFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpUuRVoCEemuRfmPxgZkqQ" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpWjcVoCEemuRfmPxgZkqQ" owner="_gpWjcFoCEemuRfmPxgZkqQ" name="进入就业信息界面" incomingConnections="_k4QM0VoCEemuRfmPxgZkqQ" outgoingConnections="_gpnpP1oCEemuRfmPxgZkqQ" location="1423,386" size="116,26" shadow="false">
+          <fillColor xmi:id="_gpWjcloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpWjc1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpWjdFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpWjdVoCEemuRfmPxgZkqQ" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpZmwVoCEemuRfmPxgZkqQ" owner="_gpZmwFoCEemuRfmPxgZkqQ" name="进入周记界面" incomingConnections="_iQI7EVoCEemuRfmPxgZkqQ" outgoingConnections="_gpnCJ1oCEemuRfmPxgZkqQ _gpoQT1oCEemuRfmPxgZkqQ" location="683,369" size="92,26" shadow="false">
+          <fillColor xmi:id="_gpZmwloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpZmw1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpZmxFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpZmxVoCEemuRfmPxgZkqQ" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpa04VoCEemuRfmPxgZkqQ" owner="_gpa04FoCEemuRfmPxgZkqQ" name="查看招聘信息" incomingConnections="_gpoQVFoCEemuRfmPxgZkqQ" outgoingConnections="_2m0gUVoCEemuRfmPxgZkqQ" location="229,471" size="92,26" shadow="false">
+          <fillColor xmi:id="_gpa04loCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpa041oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpa05FoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpa05VoCEemuRfmPxgZkqQ" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpcqEVoCEemuRfmPxgZkqQ" owner="_gpcqEFoCEemuRfmPxgZkqQ" name="进入生源地界面" incomingConnections="_kcuucFoCEemuRfmPxgZkqQ" outgoingConnections="_gpnpOloCEemuRfmPxgZkqQ _gpo3UloCEemuRfmPxgZkqQ _gpo3V1oCEemuRfmPxgZkqQ _gpo3XFoCEemuRfmPxgZkqQ" location="1148,394" size="104,26" shadow="false">
+          <fillColor xmi:id="_gpcqEloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpcqE1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpcqFFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpcqFVoCEemuRfmPxgZkqQ" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpd4MVoCEemuRfmPxgZkqQ" owner="_gpd4MFoCEemuRfmPxgZkqQ" name="修改生源地信息" incomingConnections="_gpo3UloCEemuRfmPxgZkqQ" outgoingConnections="_z-9GMFoCEemuRfmPxgZkqQ" location="1302,462" size="104,26" shadow="false">
+          <fillColor xmi:id="_gpd4MloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpd4M1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpd4NFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpd4NVoCEemuRfmPxgZkqQ" id="_BtwAMFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpfGUVoCEemuRfmPxgZkqQ" owner="_gpfGUFoCEemuRfmPxgZkqQ" name="提交周记" incomingConnections="_gpoQT1oCEemuRfmPxgZkqQ" outgoingConnections="_1XdxQVoCEemuRfmPxgZkqQ" location="804,462" size="104,26" shadow="false">
+          <fillColor xmi:id="_gpfGUloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpfGU1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpfGVFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpfGVVoCEemuRfmPxgZkqQ" id="_BtwAMFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpgUcVoCEemuRfmPxgZkqQ" owner="_gpgUcFoCEemuRfmPxgZkqQ" name="进入招聘界面" incomingConnections="_hmYzcVoCEemuRfmPxgZkqQ" outgoingConnections="_gpoQVFoCEemuRfmPxgZkqQ" location="245,349" size="92,26" shadow="false">
+          <fillColor xmi:id="_gpgUcloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpgUc1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpgUdFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpgUdVoCEemuRfmPxgZkqQ" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpiJoVoCEemuRfmPxgZkqQ" owner="_gpiJoFoCEemuRfmPxgZkqQ" name="查看生源地信息" incomingConnections="_gpo3XFoCEemuRfmPxgZkqQ" outgoingConnections="_0m4o4FoCEemuRfmPxgZkqQ" location="1042,462" size="104,26" shadow="false">
+          <fillColor xmi:id="_gpiJoloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpiJo1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpiJpFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpiJpVoCEemuRfmPxgZkqQ" id="_FpVsAFn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpjXwVoCEemuRfmPxgZkqQ" owner="_gpjXwFoCEemuRfmPxgZkqQ" name="修改生源地信息" incomingConnections="_gpo3V1oCEemuRfmPxgZkqQ" outgoingConnections="_1F6HMFoCEemuRfmPxgZkqQ" location="930,465" size="104,26" shadow="false">
+          <fillColor xmi:id="_gpjXwloCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpjXw1oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpjXxFoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpjXxVoCEemuRfmPxgZkqQ" id="_GajREFn-Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActionNode" xmi:id="_gpkl4VoCEemuRfmPxgZkqQ" owner="_gpkl4FoCEemuRfmPxgZkqQ" name="进入通知界面" incomingConnections="_h7KwoFoCEemuRfmPxgZkqQ" outgoingConnections="_gpnpMFoCEemuRfmPxgZkqQ" location="451,344" size="92,26" shadow="false">
+          <fillColor xmi:id="_gpkl4loCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_gpkl41oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_gpkl5FoCEemuRfmPxgZkqQ"/>
+          <stereotypeNodes xmi:id="_gpkl5VoCEemuRfmPxgZkqQ" id="_MnVY4Fn9Eemr49rpbf2_tw"/>
+        </nodes>
+        <nodes xmi:type="trufun:TActivityFinalNode" xmi:id="_zVst0VoCEemuRfmPxgZkqQ" owner="_zVst0FoCEemuRfmPxgZkqQ" name="ActivityFinalNode1" incomingConnections="_z-9GMFoCEemuRfmPxgZkqQ _0TRJUVoCEemuRfmPxgZkqQ _0m4o4FoCEemuRfmPxgZkqQ _1F6HMFoCEemuRfmPxgZkqQ _1XdxQVoCEemuRfmPxgZkqQ _1qCH8VoCEemuRfmPxgZkqQ _2IlsMVoCEemuRfmPxgZkqQ _2m0gUVoCEemuRfmPxgZkqQ _3HVzcFoCEemuRfmPxgZkqQ" location="989,584" size="24,24" shadow="false">
+          <fillColor xmi:id="_zVst0loCEemuRfmPxgZkqQ" r="255" g="255" b="255"/>
+          <lineColor xmi:id="_zVst01oCEemuRfmPxgZkqQ"/>
+          <fontColor xmi:id="_zVst1FoCEemuRfmPxgZkqQ"/>
+        </nodes>
+      </nodes>
+      <nodes xmi:type="trufun:SubLabel" xmi:id="_XuLYMFoCEemuRfmPxgZkqQ" name="失败" location="976,242" size="28,16" parent="_Xt6SeloCEemuRfmPxgZkqQ" alias="Name" direction="13" offset="0,0">
+        <fontColor xmi:id="_XuLYMVoCEemuRfmPxgZkqQ"/>
+      </nodes>
+      <nodes xmi:type="trufun:SubLabel" xmi:id="_XuL_QFoCEemuRfmPxgZkqQ" name="成功" location="1082,264" size="28,16" parent="_Xt65gFoCEemuRfmPxgZkqQ" alias="Name" direction="13" offset="0,0">
+        <fontColor xmi:id="_XuL_QVoCEemuRfmPxgZkqQ"/>
+      </nodes>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Xt6ScFoCEemuRfmPxgZkqQ" owner="_Xt5rYVoCEemuRfmPxgZkqQ" name="" target="_Xt32MVoCEemuRfmPxgZkqQ" source="_Xt3PIVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_Xt6ScVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_Xt6ScloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Xt6SdVoCEemuRfmPxgZkqQ" owner="_Xt6SdFoCEemuRfmPxgZkqQ" name="" target="_Xt4dQVoCEemuRfmPxgZkqQ" source="_Xt32MVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_Xt6SdloCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_Xt6Sd1oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TObjectFlowConnection" xmi:id="_Xt6SeloCEemuRfmPxgZkqQ" owner="_Xt6SeVoCEemuRfmPxgZkqQ" name="失败" subLabels="_XuLYMFoCEemuRfmPxgZkqQ" target="_Xt32MVoCEemuRfmPxgZkqQ" source="_Xt4dQVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_Xt6Se1oCEemuRfmPxgZkqQ"/>
+        <points>894,241</points>
+        <points>894,168</points>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_Xt65gFoCEemuRfmPxgZkqQ" owner="_Xt6SfVoCEemuRfmPxgZkqQ" name="成功" subLabels="_XuL_QFoCEemuRfmPxgZkqQ" target="_Xt5EUVoCEemuRfmPxgZkqQ" source="_Xt4dQVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_Xt65gVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_Xt65gloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpnCJ1oCEemuRfmPxgZkqQ" owner="_gpnCJloCEemuRfmPxgZkqQ" name="" target="_gpQc0VoCEemuRfmPxgZkqQ" source="_gpZmwVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpnCKFoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpnCKVoCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpnpMFoCEemuRfmPxgZkqQ" owner="_gpnCK1oCEemuRfmPxgZkqQ" name="" target="_gpRD4VoCEemuRfmPxgZkqQ" source="_gpkl4VoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpnpMVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpnpMloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpnpOloCEemuRfmPxgZkqQ" owner="_gpnpOVoCEemuRfmPxgZkqQ" name="" target="_gpS5EVoCEemuRfmPxgZkqQ" source="_gpcqEVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpnpO1oCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpnpPFoCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpnpP1oCEemuRfmPxgZkqQ" owner="_gpnpPloCEemuRfmPxgZkqQ" name="" target="_gpUuQVoCEemuRfmPxgZkqQ" source="_gpWjcVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpnpQFoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpnpQVoCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpoQT1oCEemuRfmPxgZkqQ" owner="_gpoQTloCEemuRfmPxgZkqQ" name="" target="_gpfGUVoCEemuRfmPxgZkqQ" source="_gpZmwVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpoQUFoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpoQUVoCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpoQVFoCEemuRfmPxgZkqQ" owner="_gpoQU1oCEemuRfmPxgZkqQ" name="" target="_gpa04VoCEemuRfmPxgZkqQ" source="_gpgUcVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpoQVVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpoQVloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpo3UloCEemuRfmPxgZkqQ" owner="_gpo3UVoCEemuRfmPxgZkqQ" name="" target="_gpd4MVoCEemuRfmPxgZkqQ" source="_gpcqEVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpo3U1oCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpo3VFoCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpo3V1oCEemuRfmPxgZkqQ" owner="_gpo3VloCEemuRfmPxgZkqQ" name="" target="_gpjXwVoCEemuRfmPxgZkqQ" source="_gpcqEVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpo3WFoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpo3WVoCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_gpo3XFoCEemuRfmPxgZkqQ" owner="_gpo3W1oCEemuRfmPxgZkqQ" name="" target="_gpiJoVoCEemuRfmPxgZkqQ" source="_gpcqEVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_gpo3XVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_gpo3XloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_hmYzcVoCEemuRfmPxgZkqQ" owner="_hmYzcFoCEemuRfmPxgZkqQ" name="" target="_gpgUcVoCEemuRfmPxgZkqQ" source="_Xt5EUVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_hmYzcloCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_hmYzc1oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_h7KwoFoCEemuRfmPxgZkqQ" owner="_h7KJkFoCEemuRfmPxgZkqQ" name="" target="_gpkl4VoCEemuRfmPxgZkqQ" source="_Xt5EUVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_h7KwoVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_h7KwoloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_iQI7EVoCEemuRfmPxgZkqQ" owner="_iQI7EFoCEemuRfmPxgZkqQ" name="" target="_gpZmwVoCEemuRfmPxgZkqQ" source="_Xt5EUVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_iQI7EloCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_iQI7E1oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_kcuucFoCEemuRfmPxgZkqQ" owner="_kcuHYFoCEemuRfmPxgZkqQ" name="" target="_gpcqEVoCEemuRfmPxgZkqQ" source="_Xt5EUVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_kcuucVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_kcuucloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_k4QM0VoCEemuRfmPxgZkqQ" owner="_k4QM0FoCEemuRfmPxgZkqQ" name="" target="_gpWjcVoCEemuRfmPxgZkqQ" source="_Xt5EUVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_k4QM0loCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_k4QM01oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_z-9GMFoCEemuRfmPxgZkqQ" owner="_z-8fIFoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpd4MVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_z-9GMVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_z-9GMloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_0TRJUVoCEemuRfmPxgZkqQ" owner="_0TRJUFoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpS5EVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_0TRJUloCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_0TRJU1oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_0m4o4FoCEemuRfmPxgZkqQ" owner="_0m4B0FoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpiJoVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_0m4o4VoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_0m4o4loCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_1F6HMFoCEemuRfmPxgZkqQ" owner="_1F5gIFoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpjXwVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_1F6HMVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_1F6HMloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_1XdxQVoCEemuRfmPxgZkqQ" owner="_1XdxQFoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpfGUVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_1XdxQloCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_1XdxQ1oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_1qCH8VoCEemuRfmPxgZkqQ" owner="_1qCH8FoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpQc0VoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_1qCH8loCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_1qCH81oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_2IlsMVoCEemuRfmPxgZkqQ" owner="_2IlsMFoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpRD4VoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_2IlsMloCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_2IlsM1oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_2m0gUVoCEemuRfmPxgZkqQ" owner="_2m0gUFoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpa04VoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_2m0gUloCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_2m0gU1oCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <connections xmi:type="trufun:TControlFlowConnection" xmi:id="_3HVzcFoCEemuRfmPxgZkqQ" owner="_3HVMYFoCEemuRfmPxgZkqQ" name="" target="_zVst0VoCEemuRfmPxgZkqQ" source="_gpUuQVoCEemuRfmPxgZkqQ">
+        <fillColor xmi:id="_3HVzcVoCEemuRfmPxgZkqQ"/>
+        <lineColor xmi:id="_3HVzcloCEemuRfmPxgZkqQ" b="255"/>
+      </connections>
+      <leftRuler xmi:id="_HbjeQVoCEemuRfmPxgZkqQ" unit="2"/>
+      <topRuler xmi:id="_HbjeQloCEemuRfmPxgZkqQ" horizontal="true" unit="2"/>
+    </contents>
+  </eAnnotations>
+  <packageImport xmi:id="_KuXzYVkREemBPdxfnK-ncg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwWwYFkREemBPdxfnK-ncg" name="Byte">
+    <eAnnotations xmi:id="_KwiWkFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwiWkVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Kwi9oFkREemBPdxfnK-ncg" name="Character">
+    <eAnnotations xmi:id="_KwjksFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwjksVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwkLwFkREemBPdxfnK-ncg" name="Date">
+    <eAnnotations xmi:id="_Kwky0FkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_Kwky0VkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwlZ4FkREemBPdxfnK-ncg" name="Double">
+    <eAnnotations xmi:id="_KwmA8FkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwmA8VkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwmA8lkREemBPdxfnK-ncg" name="Float">
+    <eAnnotations xmi:id="_KwmoAFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwmoAVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwnPEFkREemBPdxfnK-ncg" name="Long">
+    <eAnnotations xmi:id="_Kwn2IFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_Kwn2IVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwodMFkREemBPdxfnK-ncg" name="Real">
+    <eAnnotations xmi:id="_KwpEQFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwpEQVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwpEQlkREemBPdxfnK-ncg" name="Short">
+    <eAnnotations xmi:id="_KwprUFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwprUVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwqSYFkREemBPdxfnK-ncg" name="Int">
+    <eAnnotations xmi:id="_KwqSYVkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwqSYlkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Kwq5cFkREemBPdxfnK-ncg" name="String">
+    <eAnnotations xmi:id="_KwrggFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwrggVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwrgglkREemBPdxfnK-ncg" name="Integer">
+    <eAnnotations xmi:id="_KwsHkFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwsHkVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwsHklkREemBPdxfnK-ncg" name="byte">
+    <eAnnotations xmi:id="_KwsuoFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwsuoVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwtVsFkREemBPdxfnK-ncg" name="character">
+    <eAnnotations xmi:id="_KwtVsVkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwtVslkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Kwt8wFkREemBPdxfnK-ncg" name="date">
+    <eAnnotations xmi:id="_Kwuj0FkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_Kwuj0VkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Kwuj0lkREemBPdxfnK-ncg" name="double">
+    <eAnnotations xmi:id="_KwvK4FkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwvK4VkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Kwvx8FkREemBPdxfnK-ncg" name="float">
+    <eAnnotations xmi:id="_Kwvx8VkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_Kwvx8lkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwwZAFkREemBPdxfnK-ncg" name="long">
+    <eAnnotations xmi:id="_KwxAEFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwxAEVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwxAElkREemBPdxfnK-ncg" name="real">
+    <eAnnotations xmi:id="_KwxnIFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwxnIVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwyOMFkREemBPdxfnK-ncg" name="short">
+    <eAnnotations xmi:id="_KwzcUFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_KwzcUVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KwzcUlkREemBPdxfnK-ncg" name="int">
+    <eAnnotations xmi:id="_Kw0qcFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_Kw0qcVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Kw1RgFkREemBPdxfnK-ncg" name="string">
+    <eAnnotations xmi:id="_Kw14kFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_Kw14kVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Kw14klkREemBPdxfnK-ncg" name="integer">
+    <eAnnotations xmi:id="_Kw3GsFkREemBPdxfnK-ncg" source="Internel_TaggedValues">
+      <details xmi:id="_Kw3GsVkREemBPdxfnK-ncg" key="WRITE_PROTECTED" value="true"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_mVH3oFn7Eemr49rpbf2_tw" name="教师用户活动图">
+    <node xmi:type="uml:InitialNode" xmi:id="_w6_qIFn7Eemr49rpbf2_tw" name="用户老师" outgoing="_PCNVUFn8Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_xv88MFn7Eemr49rpbf2_tw" name="登录验证" outgoing="_K4iKMFn8Eemr49rpbf2_tw" incoming="_FIFOgFn8Eemr49rpbf2_tw _PCNVUFn8Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_zSlzoFn7Eemr49rpbf2_tw" outgoing="_9QXEUFn7Eemr49rpbf2_tw _FIFOgFn8Eemr49rpbf2_tw" incoming="_K4iKMFn8Eemr49rpbf2_tw">
+      <name xsi:nil="true"/>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_10csYFn7Eemr49rpbf2_tw" name="进入主界面" outgoing="_OGWUkFn9Eemr49rpbf2_tw _X3K48Fn-Eemr49rpbf2_tw _ZMtvkFn-Eemr49rpbf2_tw _ZjnzsFn-Eemr49rpbf2_tw _abTpoFn-Eemr49rpbf2_tw" incoming="_9QXEUFn7Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_-UXpkFn8Eemr49rpbf2_tw" name="发布招聘信息" outgoing="_eT3PkFn-Eemr49rpbf2_tw" incoming="_O4pUMFn9Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_BtwAMFn9Eemr49rpbf2_tw" name="修改招聘信息" outgoing="_e2HBAFn-Eemr49rpbf2_tw" incoming="_PineQFn9Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_FpVsAFn9Eemr49rpbf2_tw" name="查看招聘信息" outgoing="_d76CkFn-Eemr49rpbf2_tw" incoming="_OkRmsFn9Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_MnVY4Fn9Eemr49rpbf2_tw" name="进入招聘界面" outgoing="_OkRmsFn9Eemr49rpbf2_tw _O4pUMFn9Eemr49rpbf2_tw _PineQFn9Eemr49rpbf2_tw" incoming="_OGWUkFn9Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Q4EOQFn9Eemr49rpbf2_tw" name="查看通知" outgoing="_fQIqkFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Q4GDcFn9Eemr49rpbf2_tw" name="进入通知界面" incoming="_X3K48Fn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Q4HRkFn9Eemr49rpbf2_tw" name="发布通知" outgoing="_fmNoQFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Q4IfsFn9Eemr49rpbf2_tw" name="修改招通知" outgoing="_gA1HsFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_YHdNIFn9Eemr49rpbf2_tw" name="查看周记" outgoing="_gemo0Fn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_YHfCUFn9Eemr49rpbf2_tw" name="进入周记界面" incoming="_ZMtvkFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_YHgQcFn9Eemr49rpbf2_tw" name="周记打分评论" outgoing="_g9p8UFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_YHhekFn9Eemr49rpbf2_tw" name="提交周指导记录" outgoing="_hSnfsFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qrg-MFn9Eemr49rpbf2_tw" name="查看生源地信息" outgoing="_hrkyQFn-Eemr49rpbf2_tw" incoming="_vM_I0Fn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qrizYFn9Eemr49rpbf2_tw" name="进入生源地界面" outgoing="_IIwfUFn-Eemr49rpbf2_tw _vM_I0Fn-Eemr49rpbf2_tw" incoming="_ZjnzsFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qrkBgFn9Eemr49rpbf2_tw" name="发布待确认生源地信息" outgoing="_iHqRUFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qrlPoFn9Eemr49rpbf2_tw" name="添加生源地信息" outgoing="_ihGFAFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_GajREFn-Eemr49rpbf2_tw" name="修改生源地信息" outgoing="_4cSJ8Fn-Eemr49rpbf2_tw" incoming="_IIwfUFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Lo4-MFn-Eemr49rpbf2_tw" name="查看就业信息" outgoing="_i8XEsFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Lo6MUFn-Eemr49rpbf2_tw" name="进入就业信息界面" incoming="_abTpoFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Lo8BgFn-Eemr49rpbf2_tw" name="修改就业信息" outgoing="_jVmEEFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Lo9PoFn-Eemr49rpbf2_tw" name="核对招聘信息" outgoing="_j4TvkFn-Eemr49rpbf2_tw"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_bbG5wFn-Eemr49rpbf2_tw" name="ActivityFinalNode1" incoming="_d76CkFn-Eemr49rpbf2_tw _eT3PkFn-Eemr49rpbf2_tw _e2HBAFn-Eemr49rpbf2_tw _fQIqkFn-Eemr49rpbf2_tw _fmNoQFn-Eemr49rpbf2_tw _gA1HsFn-Eemr49rpbf2_tw _gemo0Fn-Eemr49rpbf2_tw _g9p8UFn-Eemr49rpbf2_tw _hSnfsFn-Eemr49rpbf2_tw _hrkyQFn-Eemr49rpbf2_tw _iHqRUFn-Eemr49rpbf2_tw _ihGFAFn-Eemr49rpbf2_tw _i8XEsFn-Eemr49rpbf2_tw _jVmEEFn-Eemr49rpbf2_tw _j4TvkFn-Eemr49rpbf2_tw _4cSJ8Fn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_9QXEUFn7Eemr49rpbf2_tw" name="成功" source="_zSlzoFn7Eemr49rpbf2_tw" target="_10csYFn7Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_FIFOgFn8Eemr49rpbf2_tw" name="失败" source="_zSlzoFn7Eemr49rpbf2_tw" target="_xv88MFn7Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_K4iKMFn8Eemr49rpbf2_tw" name="" source="_xv88MFn7Eemr49rpbf2_tw" target="_zSlzoFn7Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_PCNVUFn8Eemr49rpbf2_tw" name="" source="_w6_qIFn7Eemr49rpbf2_tw" target="_xv88MFn7Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_OGWUkFn9Eemr49rpbf2_tw" name="" source="_10csYFn7Eemr49rpbf2_tw" target="_MnVY4Fn9Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_OkRmsFn9Eemr49rpbf2_tw" name="" source="_MnVY4Fn9Eemr49rpbf2_tw" target="_FpVsAFn9Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_O4pUMFn9Eemr49rpbf2_tw" name="" source="_MnVY4Fn9Eemr49rpbf2_tw" target="_-UXpkFn8Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_PineQFn9Eemr49rpbf2_tw" name="" source="_MnVY4Fn9Eemr49rpbf2_tw" target="_BtwAMFn9Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Q4KU4Vn9Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Q4KU5ln9Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Q4K79Fn9Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_YHissVn9Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_YHjTxFn9Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_YHjTyVn9Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_qrmdxln9Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_qrnE1Fn9Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_IIwfUFn-Eemr49rpbf2_tw" name="" source="_qrizYFn9Eemr49rpbf2_tw" target="_GajREFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Lo-dwVn-Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Lo_E0Fn-Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Lo_E1Vn-Eemr49rpbf2_tw" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_X3K48Fn-Eemr49rpbf2_tw" name="" source="_10csYFn7Eemr49rpbf2_tw" target="_Q4GDcFn9Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZMtvkFn-Eemr49rpbf2_tw" name="" source="_10csYFn7Eemr49rpbf2_tw" target="_YHfCUFn9Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ZjnzsFn-Eemr49rpbf2_tw" name="" source="_10csYFn7Eemr49rpbf2_tw" target="_qrizYFn9Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_abTpoFn-Eemr49rpbf2_tw" name="" source="_10csYFn7Eemr49rpbf2_tw" target="_Lo6MUFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_d76CkFn-Eemr49rpbf2_tw" name="" source="_FpVsAFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_eT3PkFn-Eemr49rpbf2_tw" name="" source="_-UXpkFn8Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_e2HBAFn-Eemr49rpbf2_tw" name="" source="_BtwAMFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fQIqkFn-Eemr49rpbf2_tw" name="" source="_Q4EOQFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_fmNoQFn-Eemr49rpbf2_tw" name="" source="_Q4HRkFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gA1HsFn-Eemr49rpbf2_tw" name="" source="_Q4IfsFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gemo0Fn-Eemr49rpbf2_tw" name="" source="_YHdNIFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_g9p8UFn-Eemr49rpbf2_tw" name="" source="_YHgQcFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hSnfsFn-Eemr49rpbf2_tw" name="" source="_YHhekFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hrkyQFn-Eemr49rpbf2_tw" name="" source="_qrg-MFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_iHqRUFn-Eemr49rpbf2_tw" name="" source="_qrkBgFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ihGFAFn-Eemr49rpbf2_tw" name="" source="_qrlPoFn9Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_i8XEsFn-Eemr49rpbf2_tw" name="" source="_Lo4-MFn-Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_jVmEEFn-Eemr49rpbf2_tw" name="" source="_Lo8BgFn-Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_j4TvkFn-Eemr49rpbf2_tw" name="" source="_Lo9PoFn-Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_vM_I0Fn-Eemr49rpbf2_tw" name="" source="_qrizYFn9Eemr49rpbf2_tw" target="_qrg-MFn9Eemr49rpbf2_tw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4cSJ8Fn-Eemr49rpbf2_tw" name="" source="_GajREFn-Eemr49rpbf2_tw" target="_bbG5wFn-Eemr49rpbf2_tw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_HbjeQ1oCEemuRfmPxgZkqQ" name="学生用户活动图">
+    <node xmi:type="uml:InitialNode" xmi:id="_Xt3PIFoCEemuRfmPxgZkqQ" name="用户老师"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Xt32MFoCEemuRfmPxgZkqQ" name="登录验证"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_Xt4dQFoCEemuRfmPxgZkqQ">
+      <name xsi:nil="true"/>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Xt5EUFoCEemuRfmPxgZkqQ" name="进入主界面" outgoing="_hmYzcFoCEemuRfmPxgZkqQ _h7KJkFoCEemuRfmPxgZkqQ _iQI7EFoCEemuRfmPxgZkqQ _kcuHYFoCEemuRfmPxgZkqQ _k4QM0FoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpQc0FoCEemuRfmPxgZkqQ" name="查看周记" outgoing="_1qCH8FoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpRD4FoCEemuRfmPxgZkqQ" name="查看通知" outgoing="_2IlsMFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpS5EFoCEemuRfmPxgZkqQ" name="确认生源地信息" outgoing="_0TRJUFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpUuQFoCEemuRfmPxgZkqQ" name="查看就业信息" outgoing="_3HVMYFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpWjcFoCEemuRfmPxgZkqQ" name="进入就业信息界面" incoming="_k4QM0FoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpZmwFoCEemuRfmPxgZkqQ" name="进入周记界面" incoming="_iQI7EFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpa04FoCEemuRfmPxgZkqQ" name="查看招聘信息" outgoing="_2m0gUFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpcqEFoCEemuRfmPxgZkqQ" name="进入生源地界面" incoming="_kcuHYFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpd4MFoCEemuRfmPxgZkqQ" name="修改生源地信息" outgoing="_z-8fIFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpfGUFoCEemuRfmPxgZkqQ" name="提交周记" outgoing="_1XdxQFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpgUcFoCEemuRfmPxgZkqQ" name="进入招聘界面" incoming="_hmYzcFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpiJoFoCEemuRfmPxgZkqQ" name="查看生源地信息" outgoing="_0m4B0FoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpjXwFoCEemuRfmPxgZkqQ" name="修改生源地信息" outgoing="_1F5gIFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_gpkl4FoCEemuRfmPxgZkqQ" name="进入通知界面" incoming="_h7KJkFoCEemuRfmPxgZkqQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_zVst0FoCEemuRfmPxgZkqQ" name="ActivityFinalNode1" incoming="_z-8fIFoCEemuRfmPxgZkqQ _0TRJUFoCEemuRfmPxgZkqQ _0m4B0FoCEemuRfmPxgZkqQ _1F5gIFoCEemuRfmPxgZkqQ _1XdxQFoCEemuRfmPxgZkqQ _1qCH8FoCEemuRfmPxgZkqQ _2IlsMFoCEemuRfmPxgZkqQ _2m0gUFoCEemuRfmPxgZkqQ _3HVMYFoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Xt5rYVoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Xt6SdFoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ObjectFlow" xmi:id="_Xt6SeVoCEemuRfmPxgZkqQ" name="失败"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Xt6SfVoCEemuRfmPxgZkqQ" name="成功"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpnCIVoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpnCJloCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpnCK1oCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpnpNFoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpnpOVoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpnpPloCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpnpQ1oCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpnpSFoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpoQRFoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpoQSVoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpoQTloCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpoQU1oCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpo3UVoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpo3VloCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpo3W1oCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gpo3YFoCEemuRfmPxgZkqQ" name=""/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hmYzcFoCEemuRfmPxgZkqQ" name="" source="_Xt5EUFoCEemuRfmPxgZkqQ" target="_gpgUcFoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_h7KJkFoCEemuRfmPxgZkqQ" name="" source="_Xt5EUFoCEemuRfmPxgZkqQ" target="_gpkl4FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_iQI7EFoCEemuRfmPxgZkqQ" name="" source="_Xt5EUFoCEemuRfmPxgZkqQ" target="_gpZmwFoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_kcuHYFoCEemuRfmPxgZkqQ" name="" source="_Xt5EUFoCEemuRfmPxgZkqQ" target="_gpcqEFoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_k4QM0FoCEemuRfmPxgZkqQ" name="" source="_Xt5EUFoCEemuRfmPxgZkqQ" target="_gpWjcFoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_z-8fIFoCEemuRfmPxgZkqQ" name="" source="_gpd4MFoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_0TRJUFoCEemuRfmPxgZkqQ" name="" source="_gpS5EFoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_0m4B0FoCEemuRfmPxgZkqQ" name="" source="_gpiJoFoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1F5gIFoCEemuRfmPxgZkqQ" name="" source="_gpjXwFoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1XdxQFoCEemuRfmPxgZkqQ" name="" source="_gpfGUFoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1qCH8FoCEemuRfmPxgZkqQ" name="" source="_gpQc0FoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_2IlsMFoCEemuRfmPxgZkqQ" name="" source="_gpRD4FoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_2m0gUFoCEemuRfmPxgZkqQ" name="" source="_gpa04FoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3HVMYFoCEemuRfmPxgZkqQ" name="" source="_gpUuQFoCEemuRfmPxgZkqQ" target="_zVst0FoCEemuRfmPxgZkqQ"/>
+  </packagedElement>
+  <profileApplication xmi:id="_KvyIoFkREemBPdxfnK-ncg">
+    <eAnnotations xmi:id="_Kv1L8FkREemBPdxfnK-ncg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+  <profileApplication xmi:id="_KwTGAFkREemBPdxfnK-ncg">
+    <eAnnotations xmi:id="_KwTGAVkREemBPdxfnK-ncg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="platform:/plugin/com.trufun.uml2.kernel/UML2Default.profile.uml#_kRqOsopdEduhQbAH2yN0Zw"/>
+    </eAnnotations>
+    <appliedProfile href="platform:/plugin/com.trufun.uml2.kernel/UML2Default.profile.uml#_kRqOsIpdEduhQbAH2yN0Zw"/>
+  </profileApplication>
+  <profileApplication xmi:id="_KwUUIFkREemBPdxfnK-ncg">
+    <eAnnotations xmi:id="_KwUUIVkREemBPdxfnK-ncg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="platform:/plugin/com.trufun.uml2.kernel/UML2Ext.profile.uml#_WyVnIwPrEd-5Zf6Hw9sz1g"/>
+    </eAnnotations>
+    <appliedProfile href="platform:/plugin/com.trufun.uml2.kernel/UML2Ext.profile.uml#_WyVnIQPrEd-5Zf6Hw9sz1g"/>
+  </profileApplication>
+</uml:Model>

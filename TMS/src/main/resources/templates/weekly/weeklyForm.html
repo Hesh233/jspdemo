@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>jobForm</title>
+<meta charset="utf-8" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all" />
+  <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+          
+              
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+  <legend>提交周记</legend>
+</fieldset>
+
+ 
+ 
+ 
+<form class="layui-form" action=""  lay-filter="formConfig" >
+  <div class="layui-form-item">
+    <div class="layui-form-item">
+    <label class="layui-form-label">选择周数</label>
+    <div class="layui-input-block"  style="width:150px" >
+	  <select name="weekNum"  lay-filter="weekNum" id="weekNum">
+	  <option value="1">第1周</option>
+	  <option value="2">第2周</option>
+	  <option value="3">第3周</option>
+	  <option value="4">第4周</option>
+	  <option value="5">第5周</option>
+	  <option value="6">第6周</option>
+	  <option value="7">第7周</option>
+	  <option value="8">第8周</option>
+	  <option value="9">第9周</option>
+	  <option value="10">第10周</option>
+	  <option value="11">第11周</option>
+	  <option value="12">第12周</option>
+	  <option value="13">第13周</option>
+	  <option value="14">第14周</option>
+	  <option value="15">第15周</option>
+	  <option value="16">第16周</option>
+	  <option value="17">第17周</option>
+	  <option value="18">第18周</option>
+	  <option value="19">第19周</option>
+	  <option value="20">第20周</option>
+      </select>   
+  </div>
+</div>
+<div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">周记</label>
+    <div class="layui-input-block">
+      <textarea id="weekMark" name="weekMark" placeholder="请输入内容 " class="layui-textarea" lay-verify="wordNum|required" style="width:450px;height:200px"></textarea>
+    </div>
+  </div>
+
+
+  <!--<div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">编辑器</label>
+    <div class="layui-input-block">
+      <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+    </div>
+  </div>-->
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit="" id="submit" lay-filter="demo1">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+  </div>
+</form>
+
+          
+<script th:src="@{/layui/layui.js}"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use(['jquery', 'layer'], function(){ 
+	 // var $ = layui.$ //重点处
+	  layer = layui.layer;
+	  var weekOne = new Object();
+	  weekOne.weekNum = 1;
+	  layui.$.ajax({
+	      url: "/TMS/weekly/one_weekly",
+	      type: "POST",            
+	      data:JSON.stringify(weekOne),
+	      contentType: 'application/json',
+	      dataType: "json",
+	      success: function(data){        	
+	      	if(data.code==0){
+	      		if(data.data != null){
+	      			layui.$('#weekMark').val(data.data.weekMark);
+	      		}else{
+	      			layui.$('#weekMark').val("");
+	      		}
+	      	}
+	      	else{
+	          layer.msg("获取失败", {icon: 5});
+	      }
+	      }
+	  });
+	});
+
+layui.use(
+		['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+  
+  //创建一个编辑器
+  var editIndex = layedit.build('LAY_demo_editor');  
+  //监听提交
+//   form.on('submit(demo1)', function(data){
+
+//   });
+  layui.form.on('submit(demo1)', function(data){
+	    layer.alert(JSON.stringify(data.field), {
+	        title: '最终的提交信息'
+	      });
+	    var postData = JSON.stringify(data.field);
+	      layui.$.ajax({
+	          url: "/TMS/weekly/weekly_handle",
+	          type: "POST",            
+	          data:postData,
+	          contentType: 'application/json',
+	          dataType: "json",
+	          beforeSend:function()
+              { //触发ajax请求开始时执行
+	        	  layui.$("#submit").attr("disabled","true"); //改变提交按钮上的文字并将按钮设置为不可点击
+              },
+	          success: function(data){        	
+	          	if(data.code==0){
+	          		layer.msg("提交成功", {icon: 6});   
+	          	}
+	          	else{
+	              layer.msg("修改失败"+data.message, {icon: 5});
+	          }
+	          }
+	      });
+	      return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+	});
+  layui.form.verify({
+	  wordNum: function(value) {
+		  var l = value.length; 
+		  var blen = 0; 
+			/*<![CDATA[*/
+		  for(i=0; i<l; i++) { 
+		  if ((value.charCodeAt(i) & 0xff00) != 0) { 
+		  blen ++; 
+		  } 
+		  blen ++; 
+		  }
+			/*]]>*/ 
+		  if(blen >700 ){
+			  return '字数超出350';
+		  }
+	  }
+  });
+  layui.form.on('select(weekNum)', function(data){
+	  var weekNumVal = layui.$('#weekNum option:selected').val();
+	  var weekNum = new Object();
+	  weekNum.weekNum = weekNumVal;
+      layui.$.ajax({
+          url: "/TMS/weekly/one_weekly",
+          type: "POST",            
+          data:JSON.stringify(weekNum),
+          contentType: 'application/json',
+          dataType: "json",
+          success: function(data){        	
+          	if(data.code==0){
+          		if(data.data != null){
+          			layui.$('#weekMark').val(data.data.weekMark);
+          		}else{
+          			layui.$('#weekMark').val("");
+          		}
+          	}
+          	else{
+              layer.msg("获取失败"+data.msg, {icon: 5});
+          }
+          }
+      });
+	});   
+  layui.form.on("submit(formConfig)",function(data){
+      return false;
+  }); 
+	});
+	</script>
+	</body>
+	</html>

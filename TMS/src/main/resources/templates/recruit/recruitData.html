@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>dataForm</title>
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all" />
+<!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+    <div class="layui-form" >
+    <div class="layui-form-item">
+    <label class="layui-form-label" >选择类别</label>
+    <div class="layui-input-block"  style="width:150px" id="type1">
+	  <select name="type"  lay-filter="type" id="type" >
+		<option value="0">全部</option>
+      </select>  
+      </div> 
+  </div>
+<!--   <select lay-filter="selDome" class="selectDemo" data-id="{{d.id}}"> -->
+  
+<!--   </select> -->
+</div>
+	<table class="layui-hide" id="rtab" lay-filter="rtab"></table>
+
+	<script  th:if="${session.type == 1}" type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+<button class="layui-btn layui-btn-sm" lay-event="getCheck">查询</button>
+<button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+<button class="layui-btn layui-btn-sm" lay-event="change">选择修改</button>
+ <button class="layui-btn layui-btn-sm" lay-event="del">删除</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+    <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+ <button class="layui-btn layui-btn-sm" lay-event="reFlesh">取消</button>
+ </div>
+</script>
+	<script  th:if="${session.type == 0}" type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+<button class="layui-btn layui-btn-sm" lay-event="getCheck">查询</button>
+ </div>
+</script>
+	<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="exit">exit</a>
+</script>
+	<script th:src="@{/layui/layui.js}"></script>
+	<script th:src="@{/layui/lay/modules/jquery.js}"></script>
+	<script th:inline="javascript">
+
+layui.use(['form','table'], function(){
+	var table = layui.table;  
+	var form = layui.form;
+	var id = [[${session.userId}]];
+    layui.$.ajax({
+        url: "/TMS/recruit/recruit_type",
+        type: "GET",            
+        data:"",
+    //    contentType: 'application/json',
+        dataType: "json",
+        success: function(data){        	
+        	if(data.code==0){
+        		if(data.data != null){
+        			/*<![CDATA[*/
+	      			 for(let key  in data.data) {
+		      				layui.$("#type").append("<option value='"+data.data[key].id+"'>"+data.data[key].type+"</option>");
+		      			}
+	      			/*]]>*/ 
+		      		form.render();
+        		}
+        	}
+        	else{
+            layer.msg("获取失败"+data.msg, {icon: 5});
+        }
+        }
+    });
+  var interviewType = layui.$('#type option:selected').val();
+  var tableIns = table.render({
+    elem: '#rtab'
+    ,url:'/TMS/recruit/recruit_page'
+    ,where: {interviewType:'0'}
+    ,toolbar: '#toolbarDemo'
+    ,title: '招聘信息表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{ type: 'numbers', title: '序号'}
+      ,{field:'positionName', title:'岗位名', width:120}//, edit: 'text'
+      ,{field:'companyName', title:'公司名', width:100, sort: true}
+      ,{field:'companyAddress', title:'公司地址', width:250, sort: true}    
+      ,{field:'interviewPlace', title:'面试地点', width:220,sort: true}   
+      ,{field:'type', title:'类别', width:90,sort: true}
+      ,{field:'major', title:'适合专业', width:100,sort: true}
+      ,{field:'startTime', title:'开始时间', width:140,sort: true}
+      ,{field:'endTime', title:'结束时间', width:140,sort: true}
+      ,{field:'remark', title:'备注', width:300}
+      ]]
+	  ,width : 'auto' //宽度自动，100%父级宽度，超出宽度出现滚动
+	  ,height : 540 //固定容器高度，内容超出高度出现滚动
+    ,limits: [10,20,30,100,500,1000]
+    ,limit: 10 //每页默认显示的数量
+    ,page: true
+//     ,done:function(){
+//     	layui.form.render();
+//     }
+  });
+  //工具栏事件
+  table.on('toolbar(rtab)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    var data = checkStatus.data;
+    switch(obj.event){
+    case 'getCheck':
+  	  var typeVal = layui.$('#type option:selected').val();
+  	  var interviewType = new Object();
+  	interviewType.interviewType = typeVal;
+  	  table.reload('rtab', {
+  		  url: '/TMS/recruit/recruit_page'
+  		  ,where: interviewType //设定异步数据接口的额外参数
+  		  //,height: 300
+  		});
+  	    
+    break;
+    case 'add':
+  	  var url = 
+  		  layer.open({
+  			  type: 2, 
+  			  content: '/TMS/recruit/recruit_add_form'//这里content是一个普通的String
+  				,area:["600px","500px"]	
+  		  });
+    	break;
+
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+      case 'isAll':
+        layer.msg(checkStatus.isAll ? '全选': '未全选')
+      break;
+      case 'reFlesh':
+    	  tableIns.reload();
+    	  break;
+      case 'del':
+    	  var data = checkStatus.data;
+    	//  var count = 0;
+    	  var delId = [];
+  		for(let key  in data){
+  			delId.push(data[key].rid);
+			}
+		//	count ++;
+		
+          layui.$.ajax({
+              url: "/TMS/recruit/recruit_inf_del/",
+              type: "POST",            
+              data:{datas:JSON.stringify(delId)},
+              dataType: "json",
+              success: function(data){
+                  if(data.code==0){
+                      layer.msg("删除成功", {icon: 6});
+       				  tableIns.reload();
+                  }else{
+                    layer.msg("删除失败"+data.message, {icon: 5});
+                  }
+                  return false;
+              }
+          });
+    	  break;
+      case 'change':
+          var data = checkStatus.data;
+          if(data.length != 1){
+        	  layer.msg("只能选中一个修改", {icon: 5});
+        	  return;
+          }
+    	  layer.open({
+    		  type: 2, 
+    		  content: '/TMS/recruit/recruit_change_form?id='+ data[0].rid//这里content是一个普通的String
+    			,area:["600px","500px"]	
+    	  });
+      break;
+    };
+  });
+});
+
+</script>
+
+</body>
+</html>

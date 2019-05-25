@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.HLXY.dao.SourceMapper">
+  <resultMap id="BaseResultMap" type="com.HLXY.entity.Source">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="student_num" jdbcType="INTEGER" property="studentNum" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="approve" jdbcType="TINYINT" property="approve" />
+    <result column="students_resource" jdbcType="VARCHAR" property="studentsResource" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, student_num, create_time, approve, students_resource
+  </sql>
+  	<!-- 没返回周记老师评论 -->
+	<select id="teacherPage"  resultType="java.util.HashMap">
+    select 
+    tms_source.id as id,
+    student_num as studentNum,
+    date_format(tms_source.create_time, '%Y-%m-%d %H:%i:%s')  AS createTime, 
+    students_resource as studentsResource,
+    (CASE tms_source.approve	 
+	WHEN 0 THEN '未确认'	 
+	WHEN 1 THEN '已确认'	 
+	ELSE 'null' END) approve,
+    tms_info.name  
+    from tms_source
+    left join tms_info ON tms_info.user_num = tms_source.student_num        
+    where student_num in (select student_num from tms_tea_stu where teacher_num = #{teacherNum,jdbcType=INTEGER})
+<!--     <if test="sortKey != null"> -->
+<!-- 	order by #{sortKey}  #{ascOrdesc} -->
+<!-- 	</if> -->
+	LIMIT #{page,jdbcType=INTEGER},#{limit}      
+ 	</select>  
+    	<!-- 没返回周记老师评论 -->
+	<select id="teacherPageCount"  resultType="java.lang.Integer">
+    select 
+	count(*)
+    from tms_source     
+    where student_num in (select student_num from tms_tea_stu where teacher_num = #{teacherNum,jdbcType=INTEGER})
+ 	</select>  
+ 	  <update id="updateSource" parameterType="com.HLXY.entity.Source">
+    update tms_source
+    <set>
+      <if test="approve != null">
+        approve = #{approve,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime},
+      </if>
+      <if test="studentsResource != null">
+        students_resource = #{studentsResource,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <select id="selcetByStudentNum" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_source
+    where student_num = #{studentNum,jdbcType=INTEGER}
+  </select>
+    <select id="selcetByStudentNumAndApprove" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_source
+    where student_num = #{studentNum,jdbcType=INTEGER}
+    and approve = #{approve,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_source
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tms_source
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.HLXY.entity.Source">
+    insert into tms_source (id, student_num, create_time, 
+      approve, students_resource)
+    values (#{id,jdbcType=INTEGER}, #{studentNum,jdbcType=INTEGER}, #{createTime,jdbcType=DATE}, 
+      #{approve,jdbcType=TINYINT}, #{studentsResource,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.HLXY.entity.Source">
+    insert into tms_source
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="studentNum != null">
+        student_num,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="approve != null">
+        approve,
+      </if>
+      <if test="studentsResource != null">
+        students_resource,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentNum != null">
+        #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approve != null">
+        #{approve,jdbcType=TINYINT},
+      </if>
+      <if test="studentsResource != null">
+        #{studentsResource,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.HLXY.entity.Source">
+    update tms_source
+    <set>
+      <if test="studentNum != null">
+        student_num = #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="approve != null">
+        approve = #{approve,jdbcType=TINYINT},
+      </if>
+      <if test="studentsResource != null">
+        students_resource = #{studentsResource,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.HLXY.entity.Source">
+    update tms_source
+    set student_num = #{studentNum,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=DATE},
+      approve = #{approve,jdbcType=TINYINT},
+      students_resource = #{studentsResource,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

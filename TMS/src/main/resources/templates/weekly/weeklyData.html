@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>dataForm</title>
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all" />
+<!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+	  <div class="layui-form">
+    <label class="layui-form-label">选择周数</label>
+    <div class="layui-input-block"  style="width:150px" >
+	  <select name="weekNum"  lay-filter="weekNum" id="weekNum">
+	  <option value="1">第1周</option>
+	  <option value="2">第2周</option>
+	  <option value="3">第3周</option>
+	  <option value="4">第4周</option>
+	  <option value="5">第5周</option>
+	  <option value="6">第6周</option>
+	  <option value="7">第7周</option>
+	  <option value="8">第8周</option>
+	  <option value="9">第9周</option>
+	  <option value="10">第10周</option>
+	  <option value="11">第11周</option>
+	  <option value="12">第12周</option>
+	  <option value="13">第13周</option>
+	  <option value="14">第14周</option>
+	  <option value="15">第15周</option>
+	  <option value="16">第16周</option>
+	  <option value="17">第17周</option>
+	  <option value="18">第18周</option>
+	  <option value="19">第19周</option>
+	  <option value="20">第20周</option>
+      </select>   
+  </div>
+</div>
+	<table class="layui-hide" id="wtab" lay-filter="wtab"></table>
+
+	<script type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheck">查询</button>
+<button class="layui-btn layui-btn-sm" lay-event="addGuide">添加指导记录</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+    <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+
+ </div>
+</script>
+	<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="exit">exit</a>
+</script>
+	<script th:src="@{/layui/layui.js}"></script>
+	<script th:src="@{/layui/lay/modules/jquery.js}"></script>
+	<script type="text/html" id="isShow"> 
+    {{#  if(d.lateSumitted == 1){ }}
+    <input type="checkbox" name="menuDisplay" lay-skin="switch" value="1" lay-text="晚交|准时交" lay-filter="isShow" checked="checked" lay-event="comfirm1" id="comfirm" class="comfirm"/>
+    {{#  } else {console.log(d); }}
+    <input type="checkbox" name="menuDisplay"  lay-skin="switch" value="0" lay-text="晚交|准时交" lay-filter="isShow" lay-event="comfirm0" id="comfirm" class="comfirm"/>
+    {{#  } }}
+
+</script>
+	<script>
+layui.use('table', function(){
+  var table = layui.table;  
+  vartableIns = table.render({
+	  elem: '#wtab'
+		    ,url:'/TMS/weekly/appraise_list'
+			    ,where:{weekNum:'1'}
+			    ,toolbar: '#toolbarDemo'
+			    ,title: '周记表'
+
+			    ,cols: [[
+					{ type: 'numbers', title: '序号'}
+			    //  ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true, totalRowText: '合计'}
+			      ,{field:'name', title:'姓名', width:120}//, edit: 'text'
+			      ,{field:'score', title:'分数', width:105, sort: true}
+			      ,{field:'weekNum', title:'周数', width:80, sort: true}
+			      ,{field:'studentNum', title:'学生号', width:100, sort: true}
+			      ,{field:'createTime', title:'创建时间', width:240, sort: true}
+			      ,{field:'updateTime', title:'更新时间', width:240, sort: true}
+			      ,{field:'lateSumitted', title:'是否晚交',
+			    	    templet: '#isShow', //模板关联以上定义的
+			    	    unresize: true,
+			    	    filter: "isShow"}
+			     // ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+			    ]]
+			    ,limits: [10,20,30,100,500,1000]
+			    ,limit: 10 //每页默认显示的数量
+	        ,page: true
+	      });
+  //工具栏事件
+  table.on('toolbar(wtab)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+	
+    switch(obj.event){
+      case 'getCheck':
+    	  var weekNumVal = layui.$('#weekNum option:selected').val();
+    	  var weekNum = new Object();
+    	  weekNum.weekNum = weekNumVal;
+    	  table.reload('wtab', {
+    		  url: '/TMS/weekly/appraise_list'
+    		  ,where: weekNum //设定异步数据接口的额外参数
+    		  //,height: 300
+    		});
+    	    
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+      case 'isAll':
+        layer.msg(checkStatus.isAll ? '全选': '未全选')
+      break;
+      case 'addGuide':
+    	  var url = 
+    		  layer.open({
+    			  type: 2, 
+    			  content: '/TMS/weekly/guide_form'
+    				,area:["600px","500px"]	
+    		  });
+    	  break;
+    };
+  });
+
+table.on('row(wtab)', function(obj){
+// 	  console.log(obj.tr) //得到当前行元素对象
+// 	  console.log(obj.data) //得到当前行数据
+	  var url = 
+	  layer.open({
+		  type: 2, 
+		  content: '/TMS/weekly/weekly_apprise_form?name='+ obj.data.name +'&amp;id='+ obj.data.id//这里content是一个普通的String
+			,area:["600px","500px"]	
+	  });
+	});
+});
+
+</script>
+
+</body>
+</html>

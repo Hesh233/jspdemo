@@ -1,0 +1,86 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<title>实习与就业管理系统-登录</title>
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all" />
+<style>
+#top {
+	font-size: 200%;
+	text-align: center;
+	color: #F0F0F0;
+	width:450px;
+}
+.colors{
+color: #F0F0F0;
+}
+#middle {
+	margin-top: 15%;
+}
+</style>
+</head>
+<body th:attr="background=@{/images/bg1.jpg}">
+	
+	<div class="layui-row">	
+		<div class="layui-col-xs4">
+	
+			<div class="grid-demo grid-demo-bg1">&nbsp;</div>
+		</div>
+		<div class="layui-col-xs6">
+			<div class="grid-demo">
+				<div id="middle">
+					<form action="" method="post"  class="layui-form">
+						<!--帐号输入 -->
+						<div id="top">登录</div>
+						<br></br><br></br>
+						<div class="layui-form-item">
+							<label class="layui-form-label colors">帐号</label>
+							<div class="layui-input-inline">
+								<input type="text" name="userName" id="userName" 
+									lay-verify="required"  class="layui-input" autocomplete="off" placeholder="请输入"/>
+							</div>
+						</div>
+						<!--密码输入-->
+						<div class="layui-form-item">
+							<label class="layui-form-label colors">密码</label>
+							<div class="layui-input-inline">
+								<input type="password" name="password" id="password" 
+									lay-verify="required"  class="layui-input"  autocomplete="off" placeholder="请输入"/>
+							</div>
+						</div>
+<!-- 						验证码输入 -->
+						<div class="layui-form-item"> 
+ 							<label class="layui-form-label colors">验证码</label>
+							<div class="layui-input-inline"> 
+								<input type="text" name="captcha" id="captcha"  
+									lay-verify="required" autocomplete="off" class="layui-input"
+									style="width: 90px;"  placeholder="请输入"/>
+								<input th:value="${session.csrf_token}" type="hidden" name="csrf_token" />
+ 							</div> 
+							<img id="img" src="/TMS/user/check" onclick="refresh()" 
+ 								alt="看不清楚,点击刷新" style="height: 38px; width: 150px;"/> 
+						</div>
+						
+						<!-- 按钮 -->
+						<div class="layui-row">
+							<div class="layui-col-xs3">
+								<div class="grid-demo grid-demo-bg1">&nbsp;</div>
+							</div>
+							<div class="layui-col-xs6">
+								<div class="grid-demo">
+								<button class="layui-btn" lay-submit="" lay-filter="demo1" id="submit">登录</button> 
+								<input type="reset" name="reset" id="reset" class="layui-btn"/>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/layui/layui.js}"></script>
+	<script th:src="@{/js/login.js}"></script>
+	</body>
+	</html>
+	

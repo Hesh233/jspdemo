@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.HLXY.dao.JobMapper">
+  <resultMap id="BaseResultMap" type="com.HLXY.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="student_num" jdbcType="INTEGER" property="studentNum" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_address" jdbcType="VARCHAR" property="companyAddress" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="confirm_state" jdbcType="TINYINT" property="confirmState" />
+    <result column="phone_num" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="company_num" jdbcType="VARCHAR" property="companyNum" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, student_num, company_name, company_address, create_time, confirm_state,phone_num,company_num
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectStuListAndSortCount" resultType="java.lang.Integer">		
+SELECT
+		 count(student_num) as cou
+		FROM
+			tms_job
+		WHERE
+			student_num IN (
+				SELECT
+					student_num
+				FROM
+					tms_tea_stu
+				WHERE
+					teacher_num = #{teaNum}
+)
+GROUP BY tms_job.student_num
+  </select>
+    <select id="selectStuListAndSort" resultType="java.util.HashMap">
+    select 
+	tms_job.id as id,
+	phone_num as phoneNum,
+	company_num as companyNum,
+	student_num as studentNum,
+	company_name as companyName,
+	company_address as companyAddress,
+	date_format(tms_job.create_time, '%Y-%m-%d %H:%i:%s')  AS createTime, 
+	confirm_state as comfirmState,
+	tms_info.name
+    from tms_job
+   left join tms_info ON tms_info.user_num = tms_job.student_num
+    where student_num IN
+    (select student_num from tms_tea_stu 
+    where teacher_num = #{teaNum})
+    and tms_job.create_time in 
+    (select max(tms_job.create_time) from tms_job
+    GROUP BY student_num)
+    GROUP BY tms_job.student_num
+    <if test="sortKey != null">
+    order by #{sortKey} #{ascOrDesc} 
+    </if>
+    <if test="page != null">
+         LIMIT #{page,jdbcType=INTEGER},#{limit}      
+         </if>
+  	</select>
+    <select id="selectByLastestStudentNum" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_job
+    where student_num = #{studentNum,jdbcType=INTEGER}
+    and create_time = 
+    (select max(create_time) from tms_job
+    where student_num = #{studentNum,jdbcType=INTEGER})
+     GROUP BY tms_job.student_num
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tms_job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.HLXY.entity.Job">
+    insert into tms_job (id, student_num, company_name, 
+      company_address, create_time, confirm_state,phone_num,company_num
+      )
+    values (#{id,jdbcType=INTEGER}, #{studentNum,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, 
+      #{companyAddress,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{confirmState,jdbcType=TINYINT}
+      ,#{phoneNum},#{companyNum}
+      )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.HLXY.entity.Job">
+    insert into tms_job
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="phoneNum != null">
+        phone_num,
+      </if>
+      <if test="companyNum != null">
+        company_num,
+      </if>
+      <if test="id != null">
+        id,
+      </if>
+      <if test="studentNum != null">
+        student_num,
+      </if>
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="companyAddress != null">
+        company_address,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="confirmState != null">
+        confirm_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="phoneNum != null">
+        #{phoneNum},
+      </if>
+      <if test="companyNum != null">
+        #{companyNum},
+      </if>
+      <if test="studentNum != null">
+        #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="confirmState != null">
+        #{confirmState,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <!-- 没有用到，没有更新字段 -->
+  <update id="updateByPrimaryKeySelective" parameterType="com.HLXY.entity.Job">
+    update tms_job
+    <set>
+      <if test="studentNum != null">
+        student_num = #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        company_address = #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="confirmState != null">
+        confirm_state = #{confirmState,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <update id="updateByLatestStuNumSelective" parameterType="com.HLXY.entity.Job">
+    update tms_job
+    <set>
+      <if test="phoneNum != null">
+        phone_num = #{phoneNum},
+      </if>
+      <if test="companyNum != null">
+       company_num = #{companyNum},
+      </if>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        company_address = #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmState != null">
+        confirm_state = #{confirmState,jdbcType=TINYINT},
+      </if>
+    </set>
+    WHERE
+	create_time IN (
+		SELECT
+			t.tim
+		FROM
+			(
+				SELECT
+					max(create_time) AS tim
+				FROM
+					tms_job
+				WHERE
+					student_num = #{studentNum,jdbcType=INTEGER}
+			) t
+	)
+AND student_num = #{studentNum,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.HLXY.entity.Job">
+    update tms_job
+    set student_num = #{studentNum,jdbcType=INTEGER},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      company_address = #{companyAddress,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      confirm_state = #{confirmState,jdbcType=TINYINT},
+      company_num = #{companyNum,jdbcType=INTEGER},
+      company_num = #{companyNum,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+</mapper>

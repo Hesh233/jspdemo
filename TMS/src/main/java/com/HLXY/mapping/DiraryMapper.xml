@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.HLXY.dao.DiraryMapper">
+  <resultMap id="BaseResultMap" type="com.HLXY.entity.Dirary">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="student_num" jdbcType="INTEGER" property="studentNum" />
+    <result column="week_mark" jdbcType="VARCHAR" property="weekMark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="week_num" jdbcType="INTEGER" property="weekNum" />
+    <result column="late_sumitted" jdbcType="TINYINT" property="lateSumitted" />
+    <result column="teacher_appraise" jdbcType="VARCHAR" property="teacherAppraise" />
+    <result column="score" jdbcType="DOUBLE" property="score" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, student_num, week_mark, create_time, week_num, late_sumitted, teacher_appraise, 
+    score, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_dirary
+    where id = #{id,jdbcType=INTEGER}
+ 	</select>   
+	<select id="selectAllCount" resultType="java.lang.Integer">
+		SELECT
+		count(*)
+		from tms_dirary
+		where student_num in (select student_num from tms_tea_stu where teacher_num = #{teacherNum,jdbcType=INTEGER})
+		<if test="weekNum != null">
+		and week_num = #{weekNum,jdbcType=INTEGER}
+		</if>
+	</select>
+			<select id="teacherNum" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		SELECT
+		teacher_num
+		from tms_tea_stu
+		where student_num = #{studentNum,jdbcType=INTEGER}
+	</select>
+		<select id="oneWeekly" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT
+		week_num,
+		 week_mark,
+		 teacher_appraise,
+		 score
+		from tms_dirary
+		where student_num = #{studentNum,jdbcType=INTEGER}
+		<if test="weekNum != null">
+		and week_num = #{weekNum,jdbcType=INTEGER}
+		</if>
+	</select>
+	<!-- 没返回周记老师评论 -->
+	<select id="selectAllSort"  resultType="java.util.HashMap">
+    select 
+    tms_dirary.id as id,
+    student_num as studentNum,
+    date_format(tms_dirary.create_time, '%Y-%m-%d %H:%i:%s')  AS createTime, 
+    date_format(tms_dirary.update_time, '%Y-%m-%d %H:%i:%s')  AS updateTime, 
+    late_sumitted as lateSumitted,
+    week_num as weekNum,
+    score as score,
+    tms_info.name  
+    from tms_dirary
+    left join tms_info ON tms_info.user_num = tms_dirary.student_num        
+    where student_num in (select student_num from tms_tea_stu where teacher_num = #{teacherNum,jdbcType=INTEGER})
+    <if test="weekNum != null">
+    and week_num = #{weekNum,jdbcType=INTEGER}
+    </if>
+    <if test="sortKey != null">
+	order by #{sortKey}  #{ascOrdesc}
+	</if>
+	LIMIT #{page,jdbcType=INTEGER},#{limit}      
+ 	</select>  
+ 	  <select id="selectByStuNumAndWeek"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_dirary
+    where student_num = #{studentNum,jdbcType=INTEGER}
+    and week_num = #{weekNum,jdbcType=INTEGER}
+    
+ 	</select> 
+ 	
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tms_dirary
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.HLXY.entity.Dirary">
+    insert into tms_dirary (id, student_num, week_mark, 
+      create_time, week_num, late_sumitted, 
+      teacher_appraise, score, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{studentNum,jdbcType=INTEGER}, #{weekMark,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{weekNum,jdbcType=INTEGER}, #{lateSumitted,jdbcType=TINYINT}, 
+      #{teacherAppraise,jdbcType=VARCHAR}, #{score,jdbcType=DOUBLE}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.HLXY.entity.Dirary">
+    insert into tms_dirary
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="studentNum != null">
+        student_num,
+      </if>
+      <if test="weekMark != null">
+        week_mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="weekNum != null">
+        week_num,
+      </if>
+      <if test="lateSumitted != null">
+        late_sumitted,
+      </if>
+      <if test="teacherAppraise != null">
+        teacher_appraise,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentNum != null">
+        #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="weekMark != null">
+        #{weekMark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weekNum != null">
+        #{weekNum,jdbcType=INTEGER},
+      </if>
+      <if test="lateSumitted != null">
+        #{lateSumitted,jdbcType=TINYINT},
+      </if>
+      <if test="teacherAppraise != null">
+        #{teacherAppraise,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.HLXY.entity.Dirary">
+    update tms_dirary
+    <set>
+      <if test="studentNum != null">
+        student_num = #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="weekMark != null">
+        week_mark = #{weekMark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weekNum != null">
+        week_num = #{weekNum,jdbcType=INTEGER},
+      </if>
+      <if test="lateSumitted != null">
+        late_sumitted = #{lateSumitted,jdbcType=TINYINT},
+      </if>
+      <if test="teacherAppraise != null">
+        teacher_appraise = #{teacherAppraise,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.HLXY.entity.Dirary">
+    update tms_dirary
+    set student_num = #{studentNum,jdbcType=INTEGER},
+      week_mark = #{weekMark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      week_num = #{weekNum,jdbcType=INTEGER},
+      late_sumitted = #{lateSumitted,jdbcType=TINYINT},
+      teacher_appraise = #{teacherAppraise,jdbcType=VARCHAR},
+      score = #{score,jdbcType=DOUBLE},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+ 
+</mapper>

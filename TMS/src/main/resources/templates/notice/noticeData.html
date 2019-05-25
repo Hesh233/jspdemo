@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>dataForm</title>
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all" />
+<!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+	<table class="layui-hide" id="ntab" lay-filter="ntab"></table>
+
+	<script type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+<button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+<button class="layui-btn layui-btn-sm" lay-event="change">选择修改</button>
+ <button class="layui-btn layui-btn-sm" lay-event="del">删除</button>
+ <button class="layui-btn layui-btn-sm" lay-event="reFlesh">取消</button>
+ </div>
+</script>
+	<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="exit">exit</a>
+</script>
+	<script th:src="@{/layui/layui.js}"></script>
+	<script th:src="@{/layui/lay/modules/jquery.js}"></script>
+	<script th:inline="javascript">
+
+layui.use(['form','table'], function(){
+	var table = layui.table;  
+	var form = layui.form;
+  var tablePostData = new Object();
+  var tableIns = table.render({
+    elem: '#ntab'
+    ,url:'/TMS/notice/notice_page'
+    ,toolbar: '#toolbarDemo'
+    ,title: '通知信息表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{ type: 'numbers', title: '序号'}   
+      ,{field:'title', title:'标题', width:220}   
+      ,{field:'teacherName', title:'老师姓名', width:220,sort: true}
+      ,{field:'startTime', title:'开始时间', width:140,sort: true}
+      ,{field:'endTime', title:'结束时间', width:140,sort: true}
+      ,{field:'entryeeInfo', title:'信息', width:300}
+      ]]
+	,width : 'auto' //宽度自动，100%父级宽度，超出宽度出现滚动
+	,height : 540 //固定容器高度，内容超出高度出现滚动
+    ,limits: [10,20,30,100,500,1000]
+    ,limit: 10 //每页默认显示的数量
+    ,page: true
+//     ,done:function(){
+//     	layui.form.render();
+//     }
+  });
+  //工具栏事件
+  table.on('toolbar(ntab)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    var data = checkStatus.data;
+    switch(obj.event){
+    case 'add':
+  	  var url = 
+  		  layer.open({
+  			  type: 2, 
+  			  content: '/TMS/notice/notice_one_data'//这里content是一个普通的String
+  				,area:["600px","500px"]	
+  		  });
+    	break;
+      case 'getCheckDataSave':
+    	    if(checkStatus.data.length == 0 ){
+    	    	layer.msg("未选中");
+    	    	return;
+    	    }    
+    	  console.log("checkStatus===");
+    	  console.log(checkStatus);
+        var data = checkStatus.data;
+      //  layer.alert(JSON.stringify(data));
+   	    var arrs = [];
+   	    var tabs = table.cache.ntab;
+      //  console.log(typeof(data));
+      //  console.log(data);
+        layui.$.ajax({
+            url: "/recruit/recruit_inf_change/",
+            type: "POST",            
+            data:{datas:JSON.stringify(data)},
+            dataType: "json",
+            success: function(data){
+                if(data.code==0){
+          //          obj.del();
+          //          layer.close(index);
+       //             layer.msg("删除成功", {icon: 6});
+//       table.reload('ntab' , function(){
+  //  	   layer.msg("修改成功", {icon: 6});
+    //   }); 
+       layer.msg("修改成功", {icon: 6});   
+       tableIns.reload();
+          //          parent.location.reload();
+                }else{
+                  layer.msg("修改失败"+data.message, {icon: 5});
+                }
+                return false;
+            }
+        });
+      break;
+      case 'reFlesh':
+    	  tableIns.reload();
+    	  break;
+      case 'del':
+    	  var data = checkStatus.data;
+    	//  var count = 0;
+    	  var delId = [];
+  		for(let key  in data){
+  			delId.push(data[key].id);
+			}
+		//	count ++;
+		
+          layui.$.ajax({
+              url: "/TMS/notice/notice_inf_del/",
+              type: "POST",            
+              data:{datas:JSON.stringify(delId)},
+              dataType: "json",
+              success: function(data){
+                  if(data.code==0){
+                      layer.msg("删除成功", {icon: 6});
+       				  tableIns.reload();
+                  }else{
+                    layer.msg("删除失败"+data.message, {icon: 5});
+                  }
+                  return false;
+              }
+          });
+    	  break;
+      case 'change':
+          var data = checkStatus.data;
+          if(data.length != 1){
+        	  layer.msg("只能选中一个修改", {icon: 5});
+        	  return;
+          }
+    	  layer.open({
+    		  type: 2, 
+    		  content: '/TMS/notice/notice_one_data?id='+ data[0].id + '&amp;change=1'//这里content是一个普通的String
+    			,area:["600px","500px"]	
+    	  });
+      break;
+    };
+  });
+});
+
+</script>
+
+</body>
+</html>

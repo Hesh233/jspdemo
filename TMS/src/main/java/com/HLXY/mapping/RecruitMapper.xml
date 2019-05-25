@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.HLXY.dao.RecruitMapper">
+  <resultMap id="BaseResultMap" type="com.HLXY.entity.Recruit">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="position_name" jdbcType="VARCHAR" property="positionName" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_address" jdbcType="VARCHAR" property="companyAddress" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="interview_place" jdbcType="VARCHAR" property="interviewPlace" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="interview_type" jdbcType="TINYINT" property="interviewType" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, position_name, company_name, company_address, create_time, interview_place, start_time, 
+    end_time, interview_type, remark
+  </sql>
+      <select id="selectStudentRecruit" resultType="java.util.HashMap">
+    select 
+    tms_recruit.id as rid,
+	tms_recruit_type.id as id,
+	position_name as positionName,
+	interview_place as interviewPlace,
+	company_name as companyName,
+	company_address as companyAddress,
+	date_format(tms_recruit.start_time, '%Y-%m-%d')  AS startTime, 
+	date_format(tms_recruit.end_time, '%Y-%m-%d')  AS endTime, 
+	interview_type AS interviewType,
+	remark as remark,
+	tms_recruit_type.type AS type,
+	tms_recruit_type.major AS major
+    from tms_recruit
+    left join tms_recruit_type on interview_type = tms_recruit_type.id
+    where
+	date_add(end_time, INTERVAL 7 DAY) > now() 	
+    <if test="interviewType != null">
+    and interview_type = #{interviewType}
+    </if>
+    <if test="page != null">
+         LIMIT #{page,jdbcType=INTEGER},#{limit}      
+         </if>
+  	</select>
+  	      <select id="selectRecruitCount" resultType="java.lang.Integer">
+    select 
+	count(*)
+    from tms_recruit
+    where
+	date_add(end_time, INTERVAL 7 DAY) > now() 	
+    <if test="interviewType != null">
+    and interview_type = #{interviewType}
+    </if>
+  	</select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_recruit
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tms_recruit
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.HLXY.entity.Recruit">
+    insert into tms_recruit (id, position_name, company_name, 
+      company_address, create_time, interview_place, 
+      start_time, end_time, interview_type, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{positionName,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, 
+      #{companyAddress,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{interviewPlace,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{interviewType,jdbcType=TINYINT}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.HLXY.entity.Recruit">
+    insert into tms_recruit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="positionName != null">
+        position_name,
+      </if>
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="companyAddress != null">
+        company_address,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="interviewPlace != null">
+        interview_place,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="interviewType != null">
+        interview_type,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="positionName != null">
+        #{positionName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interviewPlace != null">
+        #{interviewPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interviewType != null">
+        #{interviewType,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.HLXY.entity.Recruit">
+    update tms_recruit
+    <set>
+      <if test="positionName != null">
+        position_name = #{positionName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null">
+        company_address = #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interviewPlace != null">
+        interview_place = #{interviewPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interviewType != null">
+        interview_type = #{interviewType,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.HLXY.entity.Recruit">
+    update tms_recruit
+    set position_name = #{positionName,jdbcType=VARCHAR},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      company_address = #{companyAddress,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      interview_place = #{interviewPlace,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      interview_type = #{interviewType,jdbcType=TINYINT},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+ 
+</mapper>

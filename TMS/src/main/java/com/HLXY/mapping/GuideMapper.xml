@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.HLXY.dao.GuideMapper">
+  <resultMap id="BaseResultMap" type="com.HLXY.entity.Guide">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="teacher_num" jdbcType="INTEGER" property="teacherNum" />
+    <result column="week_mark" jdbcType="VARCHAR" property="weekMark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updata_time" jdbcType="TIMESTAMP" property="updataTime" />
+    <result column="week_num" jdbcType="INTEGER" property="weekNum" />
+    <result column="student_class" jdbcType="VARCHAR" property="studentClass" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, teacher_num, week_mark, create_time, updata_time, week_num, student_class
+  </sql>
+    <select id="selectClass"  resultType="java.lang.String">
+    select 
+    student_class
+    from tms_info
+    where user_num = #{teacherNum,jdbcType=INTEGER}
+  </select>
+    <select id="selectByTeacherNumAndWeekAndClass" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_guide
+    where week_num = #{weekNum}
+    and teacher_num = #{teacherNum}
+    and student_class = #{studentClass}
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tms_guide
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tms_guide
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.HLXY.entity.Guide">
+    insert into tms_guide (id, teacher_num, week_mark, 
+      create_time, updata_time, week_num, 
+      student_class)
+    values (#{id,jdbcType=INTEGER}, #{teacherNum,jdbcType=INTEGER}, #{weekMark,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updataTime,jdbcType=TIMESTAMP}, #{weekNum,jdbcType=INTEGER}, 
+      #{studentClass,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.HLXY.entity.Guide">
+    insert into tms_guide
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="teacherNum != null">
+        teacher_num,
+      </if>
+      <if test="weekMark != null">
+        week_mark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updataTime != null">
+        updata_time,
+      </if>
+      <if test="weekNum != null">
+        week_num,
+      </if>
+      <if test="studentClass != null">
+        student_class,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="teacherNum != null">
+        #{teacherNum,jdbcType=INTEGER},
+      </if>
+      <if test="weekMark != null">
+        #{weekMark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updataTime != null">
+        #{updataTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weekNum != null">
+        #{weekNum,jdbcType=INTEGER},
+      </if>
+      <if test="studentClass != null">
+        #{studentClass,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.HLXY.entity.Guide">
+    update tms_guide
+    <set>
+      <if test="teacherNum != null">
+        teacher_num = #{teacherNum,jdbcType=INTEGER},
+      </if>
+      <if test="weekMark != null">
+        week_mark = #{weekMark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updataTime != null">
+        updata_time = #{updataTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weekNum != null">
+        week_num = #{weekNum,jdbcType=INTEGER},
+      </if>
+      <if test="studentClass != null">
+        student_class = #{studentClass,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.HLXY.entity.Guide">
+    update tms_guide
+    set teacher_num = #{teacherNum,jdbcType=INTEGER},
+      week_mark = #{weekMark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updata_time = #{updataTime,jdbcType=TIMESTAMP},
+      week_num = #{weekNum,jdbcType=INTEGER},
+      student_class = #{studentClass,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>
