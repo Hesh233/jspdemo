@@ -1,10 +1,12 @@
 # java-demo
-安卓五子棋和javaweb的天天生鲜demo
 
-1.安卓五子棋
 
-2.天天生鲜，SSM框架+MySQL
+安卓五子棋
 
-3.瞎写的ssmdemo+layui
+天天生鲜，SSM框架+MySQL
+
+瞎写的ssmdemo+layui
+
+学生就业信息管理系统
 
 
