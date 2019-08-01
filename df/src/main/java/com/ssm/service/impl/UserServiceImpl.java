@@ -17,8 +17,6 @@ import com.ssm.util.GetSha1;
 public class UserServiceImpl implements UserService{
 	@Resource
 	private UserInfoMapper userdao;
-//	@Resource
-//	private UserMapper userda;
 
 	public UserInfo getUserById(int userId) {
 		UserInfo user = userdao.selectByPrimaryKey(userId);
